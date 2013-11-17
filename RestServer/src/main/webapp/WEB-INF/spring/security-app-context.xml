@@ -34,7 +34,7 @@
 	 </authentication-manager>
  
  	 
-	 <beans:bean id="loginSuccessHandler" class="com.aka.prototicket.controller.LoginSuccessHandler" />
-	 <beans:bean id="loginFailureHandler" class="com.aka.prototicket.controller.LoginFailureHandler" />
+	 <beans:bean id="loginSuccessHandler" class="com.aka.prototicket.controller.login.LoginSuccessHandler" />
+	 <beans:bean id="loginFailureHandler" class="com.aka.prototicket.controller.login.LoginFailureHandler" />
  
 </beans:beans>

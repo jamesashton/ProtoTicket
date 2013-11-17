@@ -1,4 +1,4 @@
-package com.aka.prototicket.controller;
+package com.aka.prototicket.controller.login;
 import java.io.IOException;
 import java.io.OutputStream;
 

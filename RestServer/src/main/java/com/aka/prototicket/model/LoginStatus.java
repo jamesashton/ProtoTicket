@@ -1,6 +1,10 @@
 package com.aka.prototicket.model;
 
-public class LoginStatus {
+import java.io.Serializable;
+
+public class LoginStatus implements Serializable {
+
+	private static final long serialVersionUID = 440097928309592760L;
 	private final boolean success;
 	private final boolean loggedIn;
     private final String username;
