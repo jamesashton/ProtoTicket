@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "css1",
-        "url": "./css/senchatouch2_3_0.css",
-        "id": "loginPageCss"
+        "id": "loginPageCss",
+        "url": "./css/senchatouch2_3_0.css"
     },
     "designerId": "1c51561e-9694-4c24-9c71-f16b2dc2a41f"
 }

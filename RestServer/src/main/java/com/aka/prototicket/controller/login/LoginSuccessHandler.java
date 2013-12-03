@@ -1,6 +1,6 @@
 package com.aka.prototicket.controller.login;
 
-import java.io. IOException;
+import java.io.IOException;
 import java.io.OutputStream;
 
 import javax.servlet.ServletException;
@@ -26,6 +26,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 	public void onAuthenticationSuccess(HttpServletRequest request,
 			HttpServletResponse response, Authentication auth) throws IOException,
 			ServletException {
+		
 		logger.info("Login Successful");
 		ObjectMapper mapper = new ObjectMapper();
 		LoginStatus status = new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null);

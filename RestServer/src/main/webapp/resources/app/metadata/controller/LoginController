@@ -32,12 +32,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "OnSignInCommand",
+                "designer|controlQuery": "loginview",
                 "designer|params": [
                     "view",
                     "username",
                     "password"
                 ],
+                "designer|targetType": "loginView",
+                "fn": "OnSignInCommand",
                 "implHandler": [
                     "debugger;",
                     "console.log('Username: ' + username + '\\n' + 'Password: ' + password);",
@@ -82,9 +84,7 @@
                     "});",
                     ""
                 ],
-                "name": "signInCommand",
-                "designer|targetType": "loginView",
-                "designer|controlQuery": "loginview"
+                "name": "signInCommand"
             },
             "designerId": "006b2c43-9d52-4f95-b70b-a491a2d52441"
         },
@@ -146,10 +146,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "signInFailure",
                 "designer|params": [
                     "message"
                 ],
+                "fn": "signInFailure",
                 "implHandler": [
                     "var loginView = this.getLoginView();",
                     "loginView.showSignInFailedMessage(message);",

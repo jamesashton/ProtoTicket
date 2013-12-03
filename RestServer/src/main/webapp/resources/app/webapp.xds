@@ -1,52 +1,24 @@
 {
     "name": "webapp",
     "settings": {
+        "cmd": {},
         "exportPath": "/Users/jamesashton/Documents/development/GIT/Rainbird Projects/prototicket/RestServer/target/sencha-publish-path/",
-        "urlPrefix": "http://localhost:8080/prototicket/resources/"
-    },
-    "xdsVersion": "2.2.3",
-    "xdsBuild": 1044,
-    "schemaVersion": 1,
-    "upgradeVersion": 210000000503,
-    "framework": "touch23",
-    "topInstanceFileMap": {
-        "58021ea1-3d1e-4f51-b858-71640e8c8ca4": {
-            "paths": [
-                "metadata/resource/Library"
-            ],
-            "className": "Library"
-        },
-        "82fac3a4-a61b-4c17-bfcd-7021e984d3f7": {
-            "paths": [
-                "metadata/view/LoginView",
-                "app/view/override/LoginView.js",
-                "app/view/LoginView.js"
-            ],
-            "className": "LoginView"
-        },
-        "08b6e19b-467b-41f6-aa88-de478dea7adf": {
-            "paths": [
-                "metadata/view/MainMenuView",
-                "app/view/override/MainMenuView.js",
-                "app/view/MainMenuView.js"
-            ],
-            "className": "MainMenuView"
-        },
-        "18f5a47d-2a55-483a-ba9e-e8293ec4b1f7": {
-            "paths": [
-                "metadata/controller/LoginController",
-                "app/controller/override/LoginController.js",
-                "app/controller/LoginController.js"
-            ],
-            "className": "LoginController"
-        },
-        "1c51561e-9694-4c24-9c71-f16b2dc2a41f": {
-            "paths": [
-                "metadata/resource/css1"
-            ],
-            "className": "css1"
+        "urlPrefix": "http://localhost:8080/prototicket/resources/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
         }
     },
+    "xdsVersion": "3.0.0",
+    "xdsBuild": 1337,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000003,
+    "framework": "touch23",
     "viewOrderMap": {
         "view": [
             "82fac3a4-a61b-4c17-bfcd-7021e984d3f7",

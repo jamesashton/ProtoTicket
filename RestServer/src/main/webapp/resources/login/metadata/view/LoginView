@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "LoginView",
-        "designer|userAlias": "loginview",
         "designer|initialView": true,
+        "designer|userAlias": "loginview",
+        "designer|userClassName": "LoginView",
         "layout": "vbox"
     },
     "designerId": "82fac3a4-a61b-4c17-bfcd-7021e984d3f7",
@@ -217,6 +217,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|targetType": "Ext.Button",
                                         "fn": "onButtonTap",
                                         "implHandler": [
                                             "debugger;",
@@ -241,8 +242,7 @@
                                             "    usernameField.setValue('');",
                                             "    passwordField.setValue('');"
                                         ],
-                                        "name": "tap",
-                                        "designer|targetType": "Ext.Button"
+                                        "name": "tap"
                                     },
                                     "designerId": "707243df-3ca2-4108-b9d9-f19294f70535"
                                 }
@@ -260,10 +260,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "showSignInFailedMessage",
                 "designer|params": [
                     "message"
                 ],
+                "fn": "showSignInFailedMessage",
                 "implHandler": [
                     "var label = this.down('#signInFailedLabel');",
                     "label.setHtml(message);",
