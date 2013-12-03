@@ -48,7 +48,7 @@ Ext.define('MyApp.controller.LoginController', {
 
 
         Ext.Ajax.request({
-            url: 'http://localhost:8080/prototicket/j_spring_security_check',
+            url: 'http://localhost:8080/RestServer/j_spring_security_check',
             method: 'post',
             params: {
                 j_username: username,

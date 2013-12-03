@@ -56,19 +56,17 @@ Ext.define('MyApp.controller.LoginController', {
             },
             success: function (response) {
                 var loginResponse = Ext.JSON.decode(response.responseText);
-                if (loginResponse.success == true) {
+                if (loginResponse.success === "true") {
                     // The server will send a token that can be used throughout the app to confirm that the user is authenticated.
                     me.sessionToken = loginResponse.sessionToken;
-                    debugger;
                     me.signInSuccess();     //Just simulating success.
                 } else {
-                	debugger;
-                    me.signInFailure(loginResponse.errorMessage);
+                    me.signInFailure(loginResponse.message);
                 }
             },
 
             failure: function (response) {
-            	debugger;
+                debugger;
                 me.sessionToken = null;
                 me.signInFailure('Login failed. Please try again later.');
             }
@@ -78,7 +76,7 @@ Ext.define('MyApp.controller.LoginController', {
     },
 
     signInSuccess: function() {
-    	debugger;
+
         console.log('Signed in.');
         var loginView = this.getLoginView();
         mainMenuView = this.getMainMenuView();

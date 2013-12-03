@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
 		query.setParameter("login", login);
 		
 		@SuppressWarnings("unchecked")
-		List<User> userList = (List<User>)(List<?>)Arrays.asList( query.list().toArray());
+		List<User> userList = (List<User>)(List<?>)Arrays.asList( query.list().toArray() );
 		User out = null;
 				
 		if (userList.size() > 0)

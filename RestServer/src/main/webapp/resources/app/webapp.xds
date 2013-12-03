@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {},
         "exportPath": "/Users/jamesashton/Documents/development/GIT/Rainbird Projects/prototicket/RestServer/target/sencha-publish-path/",
-        "urlPrefix": "http://localhost:8080/prototicket/resources/",
+        "urlPrefix": "http://localhost:8080/RestServer/resources/",
         "canvasControls": {
             "viewportSize": {
                 "name": "iPhone",
