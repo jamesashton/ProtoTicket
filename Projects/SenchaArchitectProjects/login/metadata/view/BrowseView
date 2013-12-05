@@ -1,0 +1,12 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BrowseView"
+    },
+    "designerId": "21efa85c-2c34-4d86-9b10-e88fc7a70139"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "searchview",
+        "designer|userClassName": "SearchView"
+    },
+    "designerId": "b6b9d6bf-5e85-4280-a16d-43e311743173"
+}

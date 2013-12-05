@@ -1,0 +1,166 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoginController"
+    },
+    "designerId": "18f5a47d-2a55-483a-ba9e-e8293ec4b1f7",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "ref": "loginView",
+                "selector": "loginview"
+            },
+            "designerId": "00b69478-5bd3-4678-8e85-d3bc4ca848f9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "loginview",
+                "designer|params": [
+                    "view",
+                    "username",
+                    "password"
+                ],
+                "designer|targetType": "loginView",
+                "fn": "OnSignInCommand",
+                "implHandler": [
+                    "debugger;",
+                    "console.log('Username: ' + username + '\\n' + 'Password: ' + password);",
+                    "var me = this,",
+                    "    loginView = me.getLoginView();",
+                    "if (username.length === 0 || password.length === 0) {",
+                    "    loginView.showSignInFailedMessage('Please enter your username and password.');",
+                    "    return;",
+                    "}",
+                    "",
+                    "",
+                    "loginView.setMasked({",
+                    "    xtype: 'loadmask',",
+                    "    message: 'Signing In.....'",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'http://localhost:8080/RestServer/j_spring_security_check',",
+                    "    method: 'post',",
+                    "    params: {",
+                    "        j_username: username,",
+                    "        j_password: password",
+                    "    },",
+                    "    success: function (response) {",
+                    "        var loginResponse = Ext.JSON.decode(response.responseText);",
+                    "        if (loginResponse.success == true) {",
+                    "            // The server will send a token that can be used throughout the app to confirm that the user is authenticated.",
+                    "            me.sessionToken = loginResponse.sessionToken;",
+                    "            me.signInSuccess();     //Just simulating success.",
+                    "        } else {",
+                    "            me.signInFailure(loginResponse.errorMessage);",
+                    "        }",
+                    "    },",
+                    "",
+                    "    failure: function (response) {",
+                    "        me.sessionToken = null;",
+                    "        me.signInFailure('Login failed. Please try again later.');",
+                    "    }",
+                    "",
+                    "});",
+                    ""
+                ],
+                "name": "signInCommand"
+            },
+            "designerId": "006b2c43-9d52-4f95-b70b-a491a2d52441"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "signInSuccess",
+                "implHandler": [
+                    "var loginView = this.getLoginView();",
+                    "var mainMenuView = this.getMainMenuView();",
+                    "",
+                    "",
+                    "debugger;",
+                    "loginView.setMasked(false);",
+                    "",
+                    "Ext.Viewport.animateActiveItem(mainMenuView, this.getSlideLeftTransition());",
+                    ""
+                ]
+            },
+            "designerId": "2ab60136-3890-430a-ae82-208fc60ad36f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getSlideLeftTransition",
+                "implHandler": [
+                    "return { type: 'slide', direction: 'left' };"
+                ]
+            },
+            "designerId": "34d68898-f3cc-4a74-936a-70aa1e17f57f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "message"
+                ],
+                "fn": "signInFailure",
+                "implHandler": [
+                    "var loginView = this.getLoginView();",
+                    "loginView.showSignInFailedMessage(message);",
+                    "loginView.setMasked(false);"
+                ]
+            },
+            "designerId": "e0e1032b-5d0c-4da8-ba2b-7a2ebe3eff74"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "forceCreate": true,
+                "ref": "mainMenuView",
+                "selector": "mainmenuview",
+                "xtype": "mainmenuview"
+            },
+            "designerId": "92d6ead0-caac-4186-8db6-343241353797"
+        }
+    ]
+}

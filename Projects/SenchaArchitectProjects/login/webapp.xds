@@ -1,0 +1,52 @@
+{
+    "name": "webapp",
+    "settings": {
+        "cmd": {},
+        "exportPath": "/Users/jamesashton/Documents/development/GIT/Rainbird Projects/prototicket/RestServer/target/sencha-publish-path/",
+        "urlPrefix": "http://localhost:8080/RestServer/resources/app/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "customPath": ""
+    },
+    "xdsVersion": "3.0.0",
+    "xdsBuild": 1337,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000003,
+    "framework": "touch23",
+    "viewOrderMap": {
+        "view": [
+            "82fac3a4-a61b-4c17-bfcd-7021e984d3f7",
+            "08b6e19b-467b-41f6-aa88-de478dea7adf",
+            "7e6eb09b-b9a6-4f0b-8719-e4d573513027",
+            "3fbbdfc5-2644-4e8c-9048-05e5909db363",
+            "467c41cd-856e-4c6c-9abc-16fa7cd02f49",
+            "b6b9d6bf-5e85-4280-a16d-43e311743173",
+            "21efa85c-2c34-4d86-9b10-e88fc7a70139"
+        ],
+        "store": [],
+        "controller": [
+            "18f5a47d-2a55-483a-ba9e-e8293ec4b1f7"
+        ],
+        "model": [],
+        "resource": [
+            "58021ea1-3d1e-4f51-b858-71640e8c8ca4",
+            "1c51561e-9694-4c24-9c71-f16b2dc2a41f"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

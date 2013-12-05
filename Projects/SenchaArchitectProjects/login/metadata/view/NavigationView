@@ -1,0 +1,70 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "NavigationView"
+    },
+    "designerId": "7e6eb09b-b9a6-4f0b-8719-e4d573513027",
+    "cn": [
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "docked": "bottom"
+            },
+            "designerId": "f40b4497-6d1c-44b0-8d30-032a171b7094"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "home",
+                "title": "Home"
+            },
+            "designerId": "6a2a62f9-4c7d-4183-9ade-bc71bd5aeb0b",
+            "masterInstanceId": "3fbbdfc5-2644-4e8c-9048-05e5909db363"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "search",
+                "title": "Search"
+            },
+            "designerId": "e8725d3f-5ff8-465e-ae0a-f9a05beaea61",
+            "masterInstanceId": "b6b9d6bf-5e85-4280-a16d-43e311743173"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "user",
+                "title": "Profile"
+            },
+            "designerId": "5c5fad19-1f45-434d-9696-c78378b89f30",
+            "masterInstanceId": "467c41cd-856e-4c6c-9abc-16fa7cd02f49"
+        }
+    ]
+}
