@@ -20,13 +20,20 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+    models: [
+        'LoginStatus'
+    ],
+    stores: [
+        'LoginStatusJsonStore'
+    ],
     views: [
-        'MainMenuView',
         'LoginView',
         'HomeView',
         'ProfileView',
         'SearchView',
-        'BrowseView'
+        'BrowseView',
+        'Favourites',
+        'TabNavigationView'
     ],
     controllers: [
         'LoginController'

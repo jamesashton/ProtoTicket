@@ -9,5 +9,56 @@
         "designer|userAlias": "searchview",
         "designer|userClassName": "SearchView"
     },
-    "designerId": "b6b9d6bf-5e85-4280-a16d-43e311743173"
+    "designerId": "b6b9d6bf-5e85-4280-a16d-43e311743173",
+    "cn": [
+        {
+            "type": "Ext.navigation.View",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Search Navigation VIew"
+            },
+            "designerId": "5506d638-9dca-405f-9a23-66f812b5f6b9",
+            "cn": [
+                {
+                    "type": "Ext.navigation.Bar",
+                    "reference": {
+                        "name": "navigationBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Search Navigation Bar",
+                        "docked": "top",
+                        "left": 0,
+                        "right": 0,
+                        "width": "100%"
+                    },
+                    "designerId": "b5c3e390-6040-49d8-afe4-780a396f6a02",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Search",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "designer|displayName": "Search Field",
+                                "label": null,
+                                "labelWidth": "0%",
+                                "right": null,
+                                "width": 310
+                            },
+                            "designerId": "85b79f09-4b98-4d05-a8ea-a1720f525f15"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

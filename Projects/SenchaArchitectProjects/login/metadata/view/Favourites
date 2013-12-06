@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "browseview",
-        "designer|userClassName": "BrowseView"
+        "designer|userAlias": "favourites",
+        "designer|userClassName": "Favourites"
     },
-    "designerId": "21efa85c-2c34-4d86-9b10-e88fc7a70139",
+    "designerId": "8668a849-f41b-43e2-b9d1-9b318e6d3821",
     "cn": [
         {
             "type": "Ext.navigation.View",
@@ -19,9 +19,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|displayName": "Browse Navigation View"
+                "designer|displayName": "Favourites Navigation  View"
             },
-            "designerId": "79cdb6cc-c981-4ac0-8325-fbeedabdd014",
+            "designerId": "28fb976e-4864-4b65-8a32-9628260c5292",
             "cn": [
                 {
                     "type": "Ext.navigation.Bar",
@@ -31,10 +31,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "Browse Navigation Bar",
+                        "designer|displayName": "Favourites Navigation Bar",
                         "docked": "top"
                     },
-                    "designerId": "a487685b-3497-4a90-99f0-cc52b020f665"
+                    "designerId": "a079120e-1005-4c23-80d4-1eff0ecb9992"
                 }
             ]
         }

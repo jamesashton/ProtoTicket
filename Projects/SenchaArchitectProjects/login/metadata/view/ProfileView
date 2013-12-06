@@ -9,5 +9,102 @@
         "designer|userAlias": "profileview",
         "designer|userClassName": "ProfileView"
     },
-    "designerId": "467c41cd-856e-4c6c-9abc-16fa7cd02f49"
+    "designerId": "467c41cd-856e-4c6c-9abc-16fa7cd02f49",
+    "cn": [
+        {
+            "type": "Ext.navigation.View",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Profile Navigation View"
+            },
+            "designerId": "23ca690c-41be-4145-8c32-72be7e64675e",
+            "cn": [
+                {
+                    "type": "Ext.navigation.Bar",
+                    "reference": {
+                        "name": "navigationBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Profile Navigation Bar",
+                        "docked": "top"
+                    },
+                    "designerId": "7af0d3e9-9851-4c61-a6a0-f442c87fd17c",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "confirm",
+                                "text": "Save",
+                                "ui": "confirm"
+                            },
+                            "designerId": "bf49ee37-0976-4949-9684-6b8fe62b160b"
+                        },
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right"
+                            },
+                            "designerId": "9e8c4ccf-3143-42c4-a4df-c2f8d3ad1674",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Profile"
+                                    },
+                                    "designerId": "5feb8b44-6f8c-4603-926f-81e5b03c8474"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Billing"
+                                    },
+                                    "designerId": "b927d062-059d-4b29-891e-d9b67a648071"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "decline",
+                                "text": "Cancel",
+                                "ui": "decline"
+                            },
+                            "designerId": "3036e460-a5b8-4c10-98fc-e99f9abed511"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

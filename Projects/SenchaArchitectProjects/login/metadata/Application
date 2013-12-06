@@ -9,14 +9,21 @@
         "controllers": [
             "LoginController"
         ],
+        "models": [
+            "LoginStatus"
+        ],
         "name": "MyApp",
+        "stores": [
+            "LoginStatusJsonStore"
+        ],
         "views": [
-            "MainMenuView",
             "LoginView",
             "HomeView",
             "ProfileView",
             "SearchView",
-            "BrowseView"
+            "BrowseView",
+            "Favourites",
+            "TabNavigationView"
         ]
     },
     "designerId": "application"

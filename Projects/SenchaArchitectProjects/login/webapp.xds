@@ -29,18 +29,22 @@
     "viewOrderMap": {
         "view": [
             "82fac3a4-a61b-4c17-bfcd-7021e984d3f7",
-            "08b6e19b-467b-41f6-aa88-de478dea7adf",
-            "7e6eb09b-b9a6-4f0b-8719-e4d573513027",
             "3fbbdfc5-2644-4e8c-9048-05e5909db363",
             "467c41cd-856e-4c6c-9abc-16fa7cd02f49",
             "b6b9d6bf-5e85-4280-a16d-43e311743173",
-            "21efa85c-2c34-4d86-9b10-e88fc7a70139"
+            "21efa85c-2c34-4d86-9b10-e88fc7a70139",
+            "8668a849-f41b-43e2-b9d1-9b318e6d3821",
+            "66930de2-638f-46e2-951d-dd8609a9b459"
         ],
-        "store": [],
+        "store": [
+            "47c1962a-ee60-4552-baa8-2003676fe09c"
+        ],
         "controller": [
             "18f5a47d-2a55-483a-ba9e-e8293ec4b1f7"
         ],
-        "model": [],
+        "model": [
+            "d00187bc-9f06-4a09-a88a-1f36bfd8c834"
+        ],
         "resource": [
             "58021ea1-3d1e-4f51-b858-71640e8c8ca4",
             "1c51561e-9694-4c24-9c71-f16b2dc2a41f"

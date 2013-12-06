@@ -1,0 +1,64 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "loginstatus",
+        "designer|userClassName": "LoginStatus"
+    },
+    "designerId": "d00187bc-9f06-4a09-a88a-1f36bfd8c834",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "success",
+                "type": "boolean"
+            },
+            "designerId": "06a50fdb-0d14-4e35-8ced-804593126c76"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "loggedIn"
+            },
+            "designerId": "0de9618d-7c9f-475a-96e5-72c732508c52"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "username"
+            },
+            "designerId": "81b09560-eece-4114-acbc-a8b8717ad13a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "errorMessage"
+            },
+            "designerId": "9139d239-57fa-4a9d-b283-d75af350f8de"
+        }
+    ]
+}

@@ -19,11 +19,11 @@ Ext.define('MyApp.controller.LoginController', {
     config: {
         refs: {
             loginView: 'loginview',
-            mainMenuView: {
+            tabNavigationView: {
                 autoCreate: true,
                 forceCreate: true,
-                selector: 'mainmenuview',
-                xtype: 'mainmenuview'
+                selector: 'tabnavigationview',
+                xtype: 'tabnavigationview'
             }
         },
 
@@ -61,6 +61,7 @@ Ext.define('MyApp.controller.LoginController', {
             },
             success: function (response) {
                 var loginResponse = Ext.JSON.decode(response.responseText);
+                debugger;
                 if (loginResponse.success == true) {
                     // The server will send a token that can be used throughout the app to confirm that the user is authenticated.
                     me.sessionToken = loginResponse.sessionToken;
@@ -80,14 +81,15 @@ Ext.define('MyApp.controller.LoginController', {
     },
 
     signInSuccess: function() {
-        var loginView = this.getLoginView();
-        var mainMenuView = this.getMainMenuView();
-
 
         debugger;
+        var loginView = this.getLoginView();
+
+        var tabNavigationView = this.getTabNavigationView();
+
         loginView.setMasked(false);
 
-        Ext.Viewport.animateActiveItem(mainMenuView, this.getSlideLeftTransition());
+        Ext.Viewport.animateActiveItem(tabNavigationView, this.getSlideLeftTransition());
 
     },
 
