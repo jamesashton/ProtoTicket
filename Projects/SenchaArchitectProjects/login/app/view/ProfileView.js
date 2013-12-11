@@ -50,8 +50,111 @@ Ext.define('MyApp.view.ProfileView', {
                         }
                     ]
                 }
+            },
+            {
+                xtype: 'profileform',
+                bottom: 0,
+                id: 'profileform',
+                itemId: 'profileform',
+                left: 0,
+                right: 0,
+                top: 47,
+                items: [
+                    {
+                        xtype: 'carousel',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        items: [
+                            {
+                                xtype: 'container',
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                top: 0,
+                                layout: {
+                                    type: 'vbox'
+                                },
+                                items: [
+                                    {
+                                        xtype: 'titlebar',
+                                        docked: 'top',
+                                        title: 'Profile'
+                                    },
+                                    {
+                                        xtype: 'fieldset',
+                                        bottom: 10,
+                                        title: 'Credentials',
+                                        items: [
+                                            {
+                                                xtype: 'textfield',
+                                                id: 'usernamefield',
+                                                itemId: 'usernamefield',
+                                                label: 'Username',
+                                                labelWidth: '35%'
+                                            },
+                                            {
+                                                xtype: 'textfield',
+                                                id: 'passwordfield',
+                                                itemId: 'passwordfield',
+                                                label: 'Password',
+                                                labelWidth: '35%'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'fieldset',
+                                        title: 'Identity',
+                                        items: [
+                                            {
+                                                xtype: 'textfield',
+                                                label: 'Firstname',
+                                                labelWidth: '35%'
+                                            },
+                                            {
+                                                xtype: 'textfield',
+                                                label: 'Lastname',
+                                                labelWidth: '35%'
+                                            },
+                                            {
+                                                xtype: 'textfield',
+                                                label: 'Lastname',
+                                                labelWidth: '35%'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'container',
+                                bottom: 0,
+                                itemId: 'mycontainer6',
+                                left: 0,
+                                right: 0,
+                                top: 0,
+                                layout: {
+                                    type: 'vbox'
+                                },
+                                items: [
+                                    {
+                                        xtype: 'titlebar',
+                                        docked: 'top',
+                                        title: 'Billing'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
+    },
+
+    setUsername: function(username) {
+        debugger;
+        var usernameField=  Ext.getCmp("usernamefield");
+        usernameField.value = username;
     }
 
 });

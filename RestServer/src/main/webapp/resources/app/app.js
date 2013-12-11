@@ -36,7 +36,8 @@ Ext.application({
         'TabNavigationView'
     ],
     controllers: [
-        'LoginController'
+        'LoginController',
+        'HomeController'
     ],
     name: 'MyApp',
 

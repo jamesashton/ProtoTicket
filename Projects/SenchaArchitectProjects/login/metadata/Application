@@ -7,14 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
-            "LoginController"
+            "LoginController",
+            "HomeController"
         ],
         "models": [
             "LoginStatus"
         ],
         "name": "MyApp",
         "stores": [
-            "LoginStatusJsonStore"
+            "LoginStatusStore"
         ],
         "views": [
             "LoginView",

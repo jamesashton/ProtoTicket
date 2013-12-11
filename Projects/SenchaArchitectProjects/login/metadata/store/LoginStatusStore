@@ -6,9 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "LoginStatusJsonStore",
+        "clearOnPageLoad": false,
+        "designer|userAlias": "loginstatusstore",
+        "designer|userClassName": "LoginStatusStore",
         "model": "LoginStatus",
-        "storeId": "LoginStatusJsonStore"
+        "storeId": "LoginStatusStore"
     },
     "designerId": "47c1962a-ee60-4552-baa8-2003676fe09c",
     "cn": [
@@ -22,7 +24,7 @@
             "userConfig": {
                 "url": "loginstatus.json"
             },
-            "designerId": "78f128a0-16d4-42c0-889e-0be5fc3d41b7",
+            "designerId": "747ecb7b-29ba-4804-8ca1-98181c5146b0",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -31,7 +33,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "8d0adf40-5399-42fb-b1f6-2c3e1ae6be1e"
+                    "designerId": "e1281e1a-3e01-4526-8691-debb76f16a1e"
                 }
             ]
         }

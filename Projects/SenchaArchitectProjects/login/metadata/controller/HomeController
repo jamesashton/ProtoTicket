@@ -1,0 +1,75 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "",
+        "designer|userClassName": "HomeController",
+        "models": [
+            "LoginStatus"
+        ],
+        "stores": [
+            "LoginStatusJsonStore"
+        ],
+        "views": [
+            "HomeView",
+            "ProfileView"
+        ]
+    },
+    "designerId": "9856cae5-a032-4226-9d44-30098aa769cb",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "homeView",
+                "selector": "homeview"
+            },
+            "designerId": "65f60bd7-86e3-404c-a373-99b3a7712824"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "homeview",
+                "designer|targetType": "HomeView",
+                "fn": "onHomeInitialize",
+                "implHandler": [
+                    "",
+                    "//alert('username:' + Myapp.loginstatus.username);",
+                    "var profileView = this.getProfileView();",
+                    "profileView.setUsername(Myapp.loginstatus.username);"
+                ],
+                "name": "initialize"
+            },
+            "designerId": "2d72d202-5122-416e-bc28-3d31b4dbbe8b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "forceCreate": true,
+                "ref": "profileView",
+                "selector": "profileview",
+                "xtype": "profileview"
+            },
+            "designerId": "b3b793ae-d89e-46c3-9e72-eac08c5d22d5"
+        }
+    ]
+}

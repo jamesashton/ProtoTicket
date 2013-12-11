@@ -22,6 +22,8 @@ public class User {
 	
 	private String password;
 	
+	//private String email;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinTable(name="UserRole",
 		joinColumns = {@JoinColumn(name="user_id", referencedColumnName="id")},
@@ -36,7 +38,17 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+/*
+	public String getEmail()
+	{
+		return email;
+	}
 
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+*/
 	public String getLogin() {
 		return login;
 	}

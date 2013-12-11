@@ -50,7 +50,7 @@ public class UserPersistenceTests
 		assertEquals(other.getId(), user.getId());
 		assertEquals(other.getLogin(), user.getLogin());
 		assertEquals(other.getPassword(), user.getPassword());
-
+	//	assertEquals(other.getEmail(), user.getEmail());
 	}
 
 }

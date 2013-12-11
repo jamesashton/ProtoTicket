@@ -1,4 +1,4 @@
-insert into User (id,login,password) values (1,'admin','admin123')
+insert into User (id,login,password,email) values (1,'admin','admin123','admin@nowhere.xom')
 
 insert into Role (id, role) values (1,'ROLE_ADMIN')
 

@@ -7,7 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "homeview",
-        "designer|userClassName": "HomeView"
+        "designer|userClassName": "HomeView",
+        "itemId": "mypanel5",
+        "layout": "vbox"
     },
     "designerId": "3fbbdfc5-2644-4e8c-9048-05e5909db363",
     "cn": [
@@ -77,55 +79,6 @@
                             "designerId": "06988625-a38a-4a70-938e-3cd878d2b6f3"
                         },
                         {
-                            "type": "Ext.SegmentedButton",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "align": null,
-                                "container|align": null,
-                                "container|pack": null,
-                                "designer|displayName": "PrevNext Buttons"
-                            },
-                            "designerId": "f54fdda3-adaf-45bb-a9f6-09d09ae28a60",
-                            "cn": [
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "Prev Button",
-                                        "designer|uiInterfaceName": "back",
-                                        "iconCls": "arrow_left",
-                                        "text": "",
-                                        "ui": "back"
-                                    },
-                                    "designerId": "f7a7ca80-b035-433a-b60f-a9493c0e3ef3"
-                                },
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|displayName": "Next Button",
-                                        "designer|uiInterfaceName": "forward",
-                                        "iconCls": "arrow_right",
-                                        "text": "",
-                                        "ui": "forward"
-                                    },
-                                    "designerId": "45c7c14f-832e-4189-905f-8b24dd89a130"
-                                }
-                            ]
-                        },
-                        {
                             "type": "Ext.Spacer",
                             "reference": {
                                 "name": "items",
@@ -158,8 +111,51 @@
                             "designerId": "d0a42698-e634-4e62-87b4-206f38c63720"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "8a17b2b4-ef9a-488b-9e8f-622cdb9cd60d",
+                    "cn": [
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 60
+                            },
+                            "designerId": "905b09c6-e24d-4787-9fe1-470673665929"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "panel"
+                ],
+                "fn": "homeViewInitialize",
+                "implHandler": [
+                    "//alert('about to initialize home view');",
+                    "//me.fireEvent('onHomeInitialize', me, username, password);"
+                ],
+                "name": "onHomeViewInitialize"
+            },
+            "designerId": "4a247940-5bfd-419b-9f5d-28dc2120ac62"
         }
     ]
 }

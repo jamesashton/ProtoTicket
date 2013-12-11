@@ -32,7 +32,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "loggedIn"
+                "name": "loggedIn",
+                "type": "boolean"
             },
             "designerId": "0de9618d-7c9f-475a-96e5-72c732508c52"
         },
@@ -44,7 +45,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "username"
+                "name": "username",
+                "type": "string"
             },
             "designerId": "81b09560-eece-4114-acbc-a8b8717ad13a"
         },
@@ -56,7 +58,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "errorMessage"
+                "name": "errorMessage",
+                "type": "string"
             },
             "designerId": "9139d239-57fa-4a9d-b283-d75af350f8de"
         }

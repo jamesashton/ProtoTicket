@@ -228,7 +228,7 @@
                                             "label.hide();",
                                             "var username = usernameField.getValue();",
                                             "var password = passwordField.getValue();",
-                                            "/*var task = Ext.create('Ext.util.DelayedTask', function () ",
+                                            "/*var task = Ext.create('Ext.util.DelayedTask', function ()",
                                             "{",
                                             "    label.setHtml('');",
                                             "    me.parent.fireEvent('signInCommand', me, username, password);",

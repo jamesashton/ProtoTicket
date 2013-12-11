@@ -18,6 +18,10 @@ Ext.define('MyApp.view.HomeView', {
     alias: 'widget.homeview',
 
     config: {
+        itemId: 'mypanel5',
+        layout: {
+            type: 'vbox'
+        },
         items: [
             {
                 xtype: 'navigationview',
@@ -44,23 +48,6 @@ Ext.define('MyApp.view.HomeView', {
                             width: 40
                         },
                         {
-                            xtype: 'segmentedbutton',
-                            items: [
-                                {
-                                    xtype: 'button',
-                                    ui: 'back',
-                                    iconCls: 'arrow_left',
-                                    text: ''
-                                },
-                                {
-                                    xtype: 'button',
-                                    ui: 'forward',
-                                    iconCls: 'arrow_right',
-                                    text: ''
-                                }
-                            ]
-                        },
-                        {
                             xtype: 'spacer',
                             flex: 0.5,
                             maxWidth: '',
@@ -74,9 +61,31 @@ Ext.define('MyApp.view.HomeView', {
                             text: ''
                         }
                     ]
-                }
+                },
+                items: [
+                    {
+                        xtype: 'container',
+                        items: [
+                            {
+                                xtype: 'spacer',
+                                height: 60
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        listeners: [
+            {
+                fn: 'homeViewInitialize',
+                event: 'onHomeViewInitialize'
             }
         ]
+    },
+
+    homeViewInitialize: function(panel) {
+        //alert('about to initialize home view');
+        //me.fireEvent('onHomeInitialize', me, username, password);
     }
 
 });

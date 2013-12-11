@@ -28,13 +28,16 @@ Ext.define('MyApp.model.LoginStatus', {
                 type: 'boolean'
             },
             {
-                name: 'loggedIn'
+                name: 'loggedIn',
+                type: 'boolean'
             },
             {
-                name: 'username'
+                name: 'username',
+                type: 'string'
             },
             {
-                name: 'errorMessage'
+                name: 'errorMessage',
+                type: 'string'
             }
         ]
     }

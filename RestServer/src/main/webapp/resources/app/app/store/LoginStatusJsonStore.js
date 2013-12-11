@@ -15,6 +15,7 @@
 
 Ext.define('MyApp.store.LoginStatusJsonStore', {
     extend: 'Ext.data.Store',
+    alias: 'store.loginstatusjsonstore',
 
     requires: [
         'MyApp.model.LoginStatus',

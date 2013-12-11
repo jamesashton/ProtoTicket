@@ -24,7 +24,7 @@ Ext.application({
         'LoginStatus'
     ],
     stores: [
-        'LoginStatusJsonStore'
+        'LoginStatusStore'
     ],
     views: [
         'LoginView',
@@ -36,7 +36,8 @@ Ext.application({
         'TabNavigationView'
     ],
     controllers: [
-        'LoginController'
+        'LoginController',
+        'HomeController'
     ],
     name: 'MyApp',
 
