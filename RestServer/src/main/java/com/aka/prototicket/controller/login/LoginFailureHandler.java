@@ -26,7 +26,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler
 			throws IOException, ServletException {
 		
 		ObjectMapper mapper = new ObjectMapper();
-		LoginStatus status = new LoginStatus(false, false, null, "Login failed. Try again.");
+		LoginStatus status = new LoginStatus(false, false, null, "Login failed. Try again.", null);
 		OutputStream out = response.getOutputStream();
 		mapper.writeValue(out, status);
 	}

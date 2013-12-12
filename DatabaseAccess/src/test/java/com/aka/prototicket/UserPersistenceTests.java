@@ -42,15 +42,16 @@ public class UserPersistenceTests
 		user.setRole(new Role());
 		session.save(user);
 		session.flush();
-		// Otherwise the query returns the existing user (and we didn't set the
-		// parent in the role)...
 		session.clear();
+		 
 		User other = (User) session.get(User.class, user.getId());
 		assertNotNull(other.getRole());
 		assertEquals(other.getId(), user.getId());
 		assertEquals(other.getLogin(), user.getLogin());
 		assertEquals(other.getPassword(), user.getPassword());
-	//	assertEquals(other.getEmail(), user.getEmail());
+		assertEquals(other.getEmail(), user.getEmail());
+		assertEquals(other.getFirstname(), user.getFirstname());
+		assertEquals(other.getLastname(), user.getLastname());
 	}
 
 }

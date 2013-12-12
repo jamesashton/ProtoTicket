@@ -32,7 +32,7 @@ public class UserController
 		}
 		else
 		{
-			status = new LoginStatus(false,false, null, "Invalid session");
+			status = new LoginStatus(false,false, null, "Invalid session",null);
 		}	
 		return status;
 	}

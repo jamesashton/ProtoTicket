@@ -22,7 +22,7 @@ public class UserDAOAccessTest
 	private UserDAO userDAO;
 
 	@Test
-	public void test()
+	public void testGetUser()
 	{
 		User user = userDAO.getUser("admin");
 		if(user == null)
@@ -31,7 +31,11 @@ public class UserDAOAccessTest
 		}
 		else
 		{
-			assertEquals( user.getLogin(), user.getLogin() );
+			assertEquals( "admin", user.getLogin() );
+			assertEquals( "admin123", user.getPassword() );
+			assertEquals( "admin@nowhere.xom", user.getEmail() );
+			assertEquals( "admin", user.getFirstname() );
+			assertEquals( "istrator", user.getLastname() );
 		}
 		
 	}
