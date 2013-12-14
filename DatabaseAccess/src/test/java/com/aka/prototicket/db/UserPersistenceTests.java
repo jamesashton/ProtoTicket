@@ -1,4 +1,4 @@
-package com.aka.prototicket;
+package com.aka.prototicket.db;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -12,8 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aka.prototicket.entity.Role;
-import com.aka.prototicket.entity.User;
+import com.aka.prototicket.db.entity.Role;
+import com.aka.prototicket.db.entity.User;
 
 @ContextConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)

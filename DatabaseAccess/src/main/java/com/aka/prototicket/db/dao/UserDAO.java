@@ -1,9 +1,10 @@
-package com.aka.prototicket.service;
+package com.aka.prototicket.db.dao;
 
 import com.aka.prototicket.db.entity.User;
 
 
-public interface UserService {
+
+public interface UserDAO {
 	
 	public User getUser(String login);
 

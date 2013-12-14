@@ -15,17 +15,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.aka.prototicket.dao.UserDAO;
-import com.aka.prototicket.entity.User;
+import com.aka.prototicket.db.dao.UserDAO;
+import com.aka.prototicket.db.entity.User;
 import com.aka.prototicket.model.*;
+import com.aka.prototicket.model.dto.UserDto;
+import com.aka.prototicket.model.mapping.UserMapper;
 
+@Transactional
 @Component
 public class LoginSuccessHandler implements AuthenticationSuccessHandler
 {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired 
+	private UserMapper userMapper;
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
@@ -37,8 +44,9 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 		ObjectMapper mapper = new ObjectMapper();
 		
 		User user = userDAO.getUser(auth.getName());
+		UserDto userDto = userMapper.toDto(user);
 		user.setPassword("*********");
-		LoginStatus status = new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, user);
+		LoginStatus status = new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, userDto);
 		HttpSession session = request.getSession();
 		session.setAttribute("loginStatus", status);
 		

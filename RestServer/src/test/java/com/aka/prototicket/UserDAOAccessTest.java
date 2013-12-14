@@ -9,11 +9,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aka.prototicket.dao.UserDAO;
-import com.aka.prototicket.entity.User;
+import com.aka.prototicket.db.dao.UserDAO;
+import com.aka.prototicket.db.entity.User;
 
 @Transactional
-@ContextConfiguration
+@ContextConfiguration(locations = {"classpath:com/aka/prototicket/DAOAccessTest-context.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserDAOAccessTest
 {

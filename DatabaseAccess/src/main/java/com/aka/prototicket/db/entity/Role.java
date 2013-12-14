@@ -1,4 +1,4 @@
-package com.aka.prototicket.entity;
+package com.aka.prototicket.db.entity;
 
 import java.util.Set;
 
@@ -43,7 +43,7 @@ public class Role {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+	
 	public Set<User> getUserRoles() {
 		return userRoles;
 	}

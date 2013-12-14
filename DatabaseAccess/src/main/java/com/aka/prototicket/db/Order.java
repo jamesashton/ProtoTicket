@@ -1,4 +1,4 @@
-package com.aka.prototicket;
+package com.aka.prototicket.db;
 
 
 import java.util.Collection;

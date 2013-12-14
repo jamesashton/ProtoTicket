@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aka.prototicket.dao.UserDAO;
+import com.aka.prototicket.db.dao.UserDAO;
 
 
 @Service("userDetailsService")
@@ -27,7 +27,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String login)
 			throws UsernameNotFoundException {
 		
-		com.aka.prototicket.entity.User domainUser = userDAO.getUser(login);
+		com.aka.prototicket.db.entity.User domainUser = userDAO.getUser(login);
 		
 		if( domainUser == null)
 		{

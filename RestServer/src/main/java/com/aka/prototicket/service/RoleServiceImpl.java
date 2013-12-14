@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aka.prototicket.dao.RoleDAO;
-import com.aka.prototicket.entity.Role;
+import com.aka.prototicket.db.dao.RoleDAO;
+import com.aka.prototicket.db.entity.Role;
 
 @Service
 @Transactional

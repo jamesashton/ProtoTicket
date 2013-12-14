@@ -27,6 +27,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler
 		
 		ObjectMapper mapper = new ObjectMapper();
 		LoginStatus status = new LoginStatus(false, false, null, "Login failed. Try again.", null);
+		logger.error("Login failed: " + auth.getMessage());
 		OutputStream out = response.getOutputStream();
 		mapper.writeValue(out, status);
 	}

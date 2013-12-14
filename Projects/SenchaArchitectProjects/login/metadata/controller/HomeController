@@ -11,9 +11,6 @@
         "models": [
             "LoginStatus"
         ],
-        "stores": [
-            "LoginStatusJsonStore"
-        ],
         "views": [
             "HomeView",
             "ProfileView"
@@ -48,8 +45,10 @@
                 "implHandler": [
                     "",
                     "//alert('username:' + Myapp.loginstatus.username);",
-                    "var profileView = this.getProfileView();",
-                    "profileView.setUsername(Myapp.loginstatus.username);"
+                    "//var profileView = this.getProfileView();",
+                    "//profileView.setUsername(Myapp.loginstatus.username);",
+                    "console.log(\"StoreLoaded?\");",
+                    "debugger;"
                 ],
                 "name": "initialize"
             },

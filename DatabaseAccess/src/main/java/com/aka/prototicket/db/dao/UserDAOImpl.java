@@ -1,4 +1,4 @@
-package com.aka.prototicket.dao;
+package com.aka.prototicket.db.dao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,9 +10,9 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.aka.prototicket.entity.User;
-
+import com.aka.prototicket.db.entity.User;
 
 @Repository
 public class UserDAOImpl implements UserDAO {

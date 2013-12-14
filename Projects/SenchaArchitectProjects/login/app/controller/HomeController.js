@@ -20,9 +20,6 @@ Ext.define('MyApp.controller.HomeController', {
         models: [
             'LoginStatus'
         ],
-        stores: [
-            'LoginStatusStore'
-        ],
         views: [
             'HomeView',
             'ProfileView'
@@ -48,8 +45,10 @@ Ext.define('MyApp.controller.HomeController', {
     onHomeInitialize: function(component, eOpts) {
 
         //alert('username:' + Myapp.loginstatus.username);
-        var profileView = this.getProfileView();
-        profileView.setUsername(Myapp.loginstatus.username);
+        //var profileView = this.getProfileView();
+        //profileView.setUsername(Myapp.loginstatus.username);
+        console.log("StoreLoaded?");
+        debugger;
     }
 
 });

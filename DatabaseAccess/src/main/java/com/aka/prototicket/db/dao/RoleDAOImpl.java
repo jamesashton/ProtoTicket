@@ -1,11 +1,11 @@
-package com.aka.prototicket.dao;
+package com.aka.prototicket.db.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.aka.prototicket.entity.Role;
+import com.aka.prototicket.db.entity.Role;
 
 
 

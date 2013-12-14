@@ -1,10 +1,10 @@
-package com.aka.prototicket.service;
+package com.aka.prototicket.db.dao;
 
 import com.aka.prototicket.db.entity.Role;
 
 
 
-public interface RoleService {
+public interface RoleDAO {
 	
 	public Role getRole(int id);
 

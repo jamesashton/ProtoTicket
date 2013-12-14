@@ -52,70 +52,97 @@ Ext.define('MyApp.view.ProfileView', {
                 }
             },
             {
-                xtype: 'carousel',
+                xtype: 'profileform',
                 bottom: 0,
+                id: 'profileform',
+                itemId: 'profileform',
                 left: 0,
                 right: 0,
                 top: 47,
                 items: [
                     {
-                        xtype: 'container',
-                        layout: {
-                            type: 'vbox'
-                        },
+                        xtype: 'carousel',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        top: 0,
                         items: [
                             {
-                                xtype: 'titlebar',
-                                docked: 'top',
-                                title: 'Profile'
-                            },
-                            {
-                                xtype: 'fieldset',
-                                title: 'Credentials',
+                                xtype: 'container',
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                top: 0,
+                                layout: {
+                                    type: 'vbox'
+                                },
                                 items: [
                                     {
-                                        xtype: 'textfield',
-                                        id: 'usernamefield',
-                                        itemId: 'usernamefield',
-                                        label: 'Username',
-                                        labelWidth: '35%',
-                                        required: true
+                                        xtype: 'titlebar',
+                                        docked: 'top',
+                                        title: 'Profile'
                                     },
                                     {
-                                        xtype: 'textfield',
-                                        label: 'Password',
-                                        labelWidth: '35%'
+                                        xtype: 'fieldset',
+                                        bottom: 10,
+                                        title: 'Credentials',
+                                        items: [
+                                            {
+                                                xtype: 'textfield',
+                                                id: 'usernamefield',
+                                                itemId: 'usernamefield',
+                                                label: 'Username',
+                                                labelWidth: '35%'
+                                            },
+                                            {
+                                                xtype: 'textfield',
+                                                id: 'passwordfield',
+                                                itemId: 'passwordfield',
+                                                label: 'Password',
+                                                labelWidth: '35%'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'fieldset',
+                                        title: 'Identity',
+                                        items: [
+                                            {
+                                                xtype: 'textfield',
+                                                label: 'Firstname',
+                                                labelWidth: '35%'
+                                            },
+                                            {
+                                                xtype: 'textfield',
+                                                label: 'Lastname',
+                                                labelWidth: '35%'
+                                            },
+                                            {
+                                                xtype: 'textfield',
+                                                label: 'Lastname',
+                                                labelWidth: '35%'
+                                            }
+                                        ]
                                     }
                                 ]
                             },
                             {
-                                xtype: 'fieldset',
-                                title: 'Identity',
+                                xtype: 'container',
+                                bottom: 0,
+                                itemId: 'mycontainer6',
+                                left: 0,
+                                right: 0,
+                                top: 0,
+                                layout: {
+                                    type: 'vbox'
+                                },
                                 items: [
                                     {
-                                        xtype: 'textfield',
-                                        label: 'First name',
-                                        labelWidth: '35%'
-                                    },
-                                    {
-                                        xtype: 'textfield',
-                                        label: 'Last name',
-                                        labelWidth: '35%'
+                                        xtype: 'titlebar',
+                                        docked: 'top',
+                                        title: 'Billing'
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        xtype: 'container',
-                        layout: {
-                            type: 'vbox'
-                        },
-                        items: [
-                            {
-                                xtype: 'titlebar',
-                                docked: 'top',
-                                title: 'Billing'
                             }
                         ]
                     }

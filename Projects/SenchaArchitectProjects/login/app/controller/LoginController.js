@@ -51,7 +51,7 @@ Ext.define('MyApp.controller.LoginController', {
         });
 
 
-        Ext.ns("Myapp");
+        //Ext.ns("Myapp");
 
         Ext.Ajax.request({
             url: 'http://localhost:8080/RestServer/j_spring_security_check',
@@ -62,12 +62,13 @@ Ext.define('MyApp.controller.LoginController', {
             },
             success: function (response) {
                 var loginResponse = Ext.JSON.decode(response.responseText);
-                 Myapp.loginstatus = loginResponse;
+
+
                 debugger;
                 if (loginResponse.success == true) {
                     // The server will send a token that can be used throughout the app to confirm that the user is authenticated.
                     me.sessionToken = loginResponse.sessionToken;
-                    me.signInSuccess();     //Just simulating success.
+                    me.signInSuccess(loginResponse);     //Just simulating success.
                 } else {
                     me.signInFailure(loginResponse.errorMessage);
                 }
@@ -82,9 +83,20 @@ Ext.define('MyApp.controller.LoginController', {
 
     },
 
-    signInSuccess: function() {
+    signInSuccess: function(loginResponse) {
 
         debugger;
+
+        var loginStatusStore =Ext.getStore("LoginStatusStore");
+        var loginStatusRecord = Ext.create("app.model.LoginStatus",
+                                           {
+                                               success: loginResponse.success,
+                                               loggedIn: loginResponse.loggedIn,
+                                               username: loginResponse.username
+                                           });
+
+        loginStatusStore.add(loginStatusRecord);
+
         var loginView = this.getLoginView();
 
         var tabNavigationView = this.getTabNavigationView();
@@ -92,7 +104,7 @@ Ext.define('MyApp.controller.LoginController', {
         loginView.setMasked(false);
 
         Ext.Viewport.animateActiveItem(tabNavigationView, this.getSlideLeftTransition());
-
+        debugger;
     },
 
     getSlideLeftTransition: function() {

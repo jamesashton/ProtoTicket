@@ -1,40 +1,21 @@
-package com.aka.prototicket.entity;
+package com.aka.prototicket.model.dto;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
+import java.io.Serializable;
 
-@Entity
-@Table(name="User")
-public class User {
-	
-	@Id
-	@GeneratedValue
+public class UserDto implements Serializable
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3324004237294171374L;
+
 	private Integer id;
 	
 	private String login;
-	
 	private String password;
-	
 	private String email;
-
 	private String firstname;
-	
 	private String lastname;
-	
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinTable(name="UserRole",
-		joinColumns = {@JoinColumn(name="user_id", referencedColumnName="id")},
-		inverseJoinColumns = {@JoinColumn(name="role_id", referencedColumnName="id")}
-	)
-	private Role role;
 
 	public Integer getId() {
 		return id;
@@ -87,14 +68,4 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}	
-
 }
-

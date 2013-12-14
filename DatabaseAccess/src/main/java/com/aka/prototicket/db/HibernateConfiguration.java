@@ -1,4 +1,4 @@
-package com.aka.prototicket;
+package com.aka.prototicket.db;
 
 import java.util.Properties;
 
@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean;
 
-import com.aka.prototicket.entity.Role;
-import com.aka.prototicket.entity.User;
+import com.aka.prototicket.db.entity.Role;
+import com.aka.prototicket.db.entity.User;
 
 @Configuration
 public class HibernateConfiguration {

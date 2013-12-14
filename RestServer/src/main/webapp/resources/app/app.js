@@ -24,7 +24,7 @@ Ext.application({
         'LoginStatus'
     ],
     stores: [
-        'LoginStatusJsonStore'
+        'LoginStatusStore'
     ],
     views: [
         'LoginView',
