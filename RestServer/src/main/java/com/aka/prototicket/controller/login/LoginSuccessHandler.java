@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.aka.prototicket.db.dao.UserDAO;
+import com.aka.prototicket.db.entity.Role;
 import com.aka.prototicket.db.entity.User;
 import com.aka.prototicket.model.*;
 import com.aka.prototicket.model.dto.UserDto;
@@ -43,10 +44,29 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 		logger.info("Login Successful");
 		ObjectMapper mapper = new ObjectMapper();
 		
+		LoginStatus status;
 		User user = userDAO.getUser(auth.getName());
-		UserDto userDto = userMapper.toDto(user);
-		user.setPassword("*********");
-		LoginStatus status = new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, userDto);
+		if(user == null)
+		{
+			UserDto userDto = new UserDto();
+			userDto.setEmail("dev@user");
+			userDto.setFirstname("developer");
+			userDto.setId(1);
+			userDto.setLastname("developer");
+			userDto.setLogin("developer");
+			userDto.setPassword("developer");
+			Role r = new Role();
+
+			status=  new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, userDto);
+		}
+		else
+		{
+			user.setPassword("*********");
+			UserDto userDto = userMapper.toDto(user);
+			
+			status = new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, userDto);
+		}
+	   
 		HttpSession session = request.getSession();
 		session.setAttribute("loginStatus", status);
 		

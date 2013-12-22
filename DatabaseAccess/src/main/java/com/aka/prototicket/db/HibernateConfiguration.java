@@ -26,6 +26,7 @@ public class HibernateConfiguration {
 		props.put("hibernate.dialect", H2Dialect.class.getName());
 		props.put("hibernate.format_sql", "true");
 		props.put("hibernate.hbm2ddl.auto","create");
+		props.put("current_session_context_class", "thread");
 		AnnotationSessionFactoryBean bean = new AnnotationSessionFactoryBean();
 		bean.setAnnotatedClasses(new Class[]{User.class, Role.class});		
 		bean.setHibernateProperties(props);

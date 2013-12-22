@@ -39,11 +39,11 @@ Ext.application({
         'LoginController',
         'HomeController'
     ],
-    name: 'MyApp',
+    name: 'app',
 
     launch: function() {
 
-        Ext.create('MyApp.view.LoginView', {fullscreen: true});
+        Ext.create('app.view.LoginView', {fullscreen: true});
     }
 
 });

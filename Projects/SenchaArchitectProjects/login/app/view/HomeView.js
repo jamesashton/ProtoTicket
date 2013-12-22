@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.HomeView', {
+Ext.define('app.view.HomeView', {
     extend: 'Ext.Panel',
     alias: 'widget.homeview',
 

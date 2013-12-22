@@ -6,10 +6,10 @@
         "urlPrefix": "http://localhost:8080/RestServer/resources/app/",
         "canvasControls": {
             "viewportSize": {
-                "name": "iPhone",
+                "name": "iPad",
                 "builtIn": true,
-                "height": 480,
-                "width": 320
+                "height": 1024,
+                "width": 768
             },
             "viewportOrientation": "portrait"
         },

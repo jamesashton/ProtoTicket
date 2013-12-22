@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.LoginStatusStore', {
+Ext.define('app.store.LoginStatusStore', {
     extend: 'Ext.data.Store',
     alias: 'store.loginstatusstore',
 
     requires: [
-        'MyApp.model.LoginStatus'
+        'app.model.LoginStatus'
     ],
 
     config: {
         clearOnPageLoad: false,
-        model: 'MyApp.model.LoginStatus',
+        model: 'app.model.LoginStatus',
         storeId: 'LoginStatusStore'
     }
 });

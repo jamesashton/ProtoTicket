@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.ProfileView', {
+Ext.define('app.view.ProfileView', {
     extend: 'Ext.Panel',
     alias: 'widget.profileview',
 
@@ -31,17 +31,7 @@ Ext.define('MyApp.view.ProfileView', {
                         },
                         {
                             xtype: 'segmentedbutton',
-                            align: 'right',
-                            items: [
-                                {
-                                    xtype: 'button',
-                                    text: 'Profile'
-                                },
-                                {
-                                    xtype: 'button',
-                                    text: 'Billing'
-                                }
-                            ]
+                            align: 'right'
                         },
                         {
                             xtype: 'button',
@@ -52,39 +42,43 @@ Ext.define('MyApp.view.ProfileView', {
                 }
             },
             {
-                xtype: 'profileform',
+                xtype: 'formpanel',
                 bottom: 0,
                 id: 'profileform',
                 itemId: 'profileform',
                 left: 0,
                 right: 0,
                 top: 47,
+                autoDestroy: false,
                 items: [
                     {
-                        xtype: 'carousel',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        top: 0,
+                        xtype: 'tabpanel',
                         items: [
                             {
                                 xtype: 'container',
                                 bottom: 0,
-                                left: 0,
-                                right: 0,
+                                id: 'profileformcontainer',
+                                itemId: 'profileformcontainer',
                                 top: 0,
                                 layout: {
+                                    align: 'center',
+                                    pack: 'center',
                                     type: 'vbox'
                                 },
                                 items: [
                                     {
                                         xtype: 'titlebar',
                                         docked: 'top',
+                                        id: 'profiletitlebar',
+                                        itemId: 'profiletitlebar',
                                         title: 'Profile'
                                     },
                                     {
                                         xtype: 'fieldset',
-                                        bottom: 10,
+                                        centered: true,
+                                        id: 'credentialsfieldset',
+                                        itemId: 'credentialsfieldset',
+                                        maxWidth: 500,
                                         title: 'Credentials',
                                         items: [
                                             {
@@ -92,35 +86,38 @@ Ext.define('MyApp.view.ProfileView', {
                                                 id: 'usernamefield',
                                                 itemId: 'usernamefield',
                                                 label: 'Username',
-                                                labelWidth: '35%'
+                                                labelWidth: 150
                                             },
                                             {
                                                 xtype: 'textfield',
                                                 id: 'passwordfield',
                                                 itemId: 'passwordfield',
                                                 label: 'Password',
-                                                labelWidth: '35%'
+                                                labelWidth: 150
                                             }
                                         ]
                                     },
                                     {
                                         xtype: 'fieldset',
+                                        centered: true,
+                                        id: 'identityfieldset',
+                                        itemId: 'identityfieldset',
+                                        maxWidth: 500,
                                         title: 'Identity',
                                         items: [
                                             {
                                                 xtype: 'textfield',
+                                                id: 'firstnamefield',
+                                                itemId: 'firstnamefield',
                                                 label: 'Firstname',
-                                                labelWidth: '35%'
+                                                labelWidth: 150
                                             },
                                             {
                                                 xtype: 'textfield',
+                                                id: 'lastnamefield',
+                                                itemId: 'lastnamefield',
                                                 label: 'Lastname',
-                                                labelWidth: '35%'
-                                            },
-                                            {
-                                                xtype: 'textfield',
-                                                label: 'Lastname',
-                                                labelWidth: '35%'
+                                                labelWidth: 150
                                             }
                                         ]
                                     }
@@ -129,7 +126,8 @@ Ext.define('MyApp.view.ProfileView', {
                             {
                                 xtype: 'container',
                                 bottom: 0,
-                                itemId: 'mycontainer6',
+                                id: 'billingformcontainer',
+                                itemId: 'billingformcontainer',
                                 left: 0,
                                 right: 0,
                                 top: 0,
@@ -140,6 +138,8 @@ Ext.define('MyApp.view.ProfileView', {
                                     {
                                         xtype: 'titlebar',
                                         docked: 'top',
+                                        id: 'billingtitlebar',
+                                        itemId: 'billingtitlebar',
                                         title: 'Billing'
                                     }
                                 ]

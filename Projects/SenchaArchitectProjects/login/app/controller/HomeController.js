@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.controller.HomeController', {
+Ext.define('app.controller.HomeController', {
     extend: 'Ext.app.Controller',
 
     config: {

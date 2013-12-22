@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.BrowseView', {
+Ext.define('app.view.BrowseView', {
     extend: 'Ext.Panel',
     alias: 'widget.browseview',
 

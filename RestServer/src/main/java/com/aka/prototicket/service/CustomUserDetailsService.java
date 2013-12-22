@@ -18,7 +18,7 @@ import com.aka.prototicket.db.dao.UserDAO;
 
 
 @Service("userDetailsService")
-@Transactional(readOnly=true)
+@Transactional
 public class CustomUserDetailsService implements UserDetailsService {
 	
 	@Autowired

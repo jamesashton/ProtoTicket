@@ -13,16 +13,16 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.TabNavigationView', {
+Ext.define('app.view.TabNavigationView', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.tabnavigationview',
 
     requires: [
-        'MyApp.view.HomeView',
-        'MyApp.view.BrowseView',
-        'MyApp.view.SearchView',
-        'MyApp.view.Favourites',
-        'MyApp.view.ProfileView'
+        'app.view.HomeView',
+        'app.view.BrowseView',
+        'app.view.SearchView',
+        'app.view.Favourites',
+        'app.view.ProfileView'
     ],
 
     config: {

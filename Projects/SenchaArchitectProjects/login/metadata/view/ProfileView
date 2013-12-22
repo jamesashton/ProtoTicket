@@ -60,33 +60,7 @@
                             "userConfig": {
                                 "align": "right"
                             },
-                            "designerId": "9e8c4ccf-3143-42c4-a4df-c2f8d3ad1674",
-                            "cn": [
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "text": "Profile"
-                                    },
-                                    "designerId": "5feb8b44-6f8c-4603-926f-81e5b03c8474"
-                                },
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "text": "Billing"
-                                    },
-                                    "designerId": "b927d062-059d-4b29-891e-d9b67a648071"
-                                }
-                            ]
+                            "designerId": "9e8c4ccf-3143-42c4-a4df-c2f8d3ad1674"
                         },
                         {
                             "type": "Ext.Button",
@@ -134,8 +108,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoDestroy": false,
                 "bottom": 0,
-                "designer|createAlias": "profileform",
+                "designer|createAlias": null,
+                "designer|displayName": "Profile Form",
                 "id": "profileform",
                 "itemId": "profileform",
                 "left": 0,
@@ -145,19 +121,13 @@
             "designerId": "a1395cc9-43c0-4ead-8f99-13a46ccc1d4f",
             "cn": [
                 {
-                    "type": "Ext.carousel.Carousel",
+                    "type": "Ext.tab.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "bottom": 0,
-                        "left": 0,
-                        "right": 0,
-                        "top": 0
-                    },
-                    "designerId": "f2cc65be-7b86-42a1-acc9-a40ba4e8e802",
+                    "designerId": "202b050e-5f3c-40c7-8d38-b038702b69bd",
                     "cn": [
                         {
                             "type": "Ext.Container",
@@ -168,10 +138,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "bottom": 0,
+                                "container|align": "center",
+                                "container|pack": "center",
+                                "designer|createAlias": null,
+                                "designer|displayName": "Profile",
+                                "id": "profileformcontainer",
+                                "itemId": "profileformcontainer",
                                 "layout": "vbox",
-                                "left": 0,
-                                "right": 0,
-                                "top": 0
+                                "left": null,
+                                "right": null,
+                                "top": 0,
+                                "width": null
                             },
                             "designerId": "cbf9efe9-9239-4f6f-88db-ea0b7b99684d",
                             "cn": [
@@ -183,7 +160,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|createAlias": null,
+                                        "designer|displayName": "Profile Title Bar",
                                         "docked": "top",
+                                        "id": "profiletitlebar",
+                                        "itemId": "profiletitlebar",
                                         "title": "Profile"
                                     },
                                     "designerId": "0700e6c7-d19d-4965-9cb2-a3caf271d318"
@@ -196,7 +177,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "bottom": 10,
+                                        "bottom": null,
+                                        "centered": true,
+                                        "designer|createAlias": null,
+                                        "designer|displayName": "Credentials Field Set",
+                                        "id": "credentialsfieldset",
+                                        "itemId": "credentialsfieldset",
+                                        "maxWidth": 500,
                                         "title": "Credentials"
                                     },
                                     "designerId": "3ba70092-7f19-4b18-904e-5927493abef6",
@@ -214,7 +201,7 @@
                                                 "id": "usernamefield",
                                                 "itemId": "usernamefield",
                                                 "label": "Username",
-                                                "labelWidth": "35%",
+                                                "labelWidth": 150,
                                                 "value": null
                                             },
                                             "designerId": "67fedaec-7444-4d76-ac61-0e6484d5d746"
@@ -227,11 +214,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|createAlias": null,
                                                 "designer|displayName": "Password",
                                                 "id": "passwordfield",
                                                 "itemId": "passwordfield",
                                                 "label": "Password",
-                                                "labelWidth": "35%"
+                                                "labelWidth": 150
                                             },
                                             "designerId": "f0b11a6b-a64a-468c-9d5c-5c4ebd048214"
                                         }
@@ -245,6 +233,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "centered": true,
+                                        "designer|createAlias": null,
+                                        "designer|displayName": "Identity Fieldset",
+                                        "id": "identityfieldset",
+                                        "itemId": "identityfieldset",
+                                        "maxWidth": 500,
                                         "title": "Identity"
                                     },
                                     "designerId": "cb00d627-ca82-428c-ba01-4966177d9714",
@@ -257,9 +251,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|createAlias": null,
                                                 "designer|displayName": "Firstname",
+                                                "id": "firstnamefield",
+                                                "itemId": "firstnamefield",
                                                 "label": "Firstname",
-                                                "labelWidth": "35%"
+                                                "labelWidth": 150
                                             },
                                             "designerId": "dc10ff74-6091-46dd-b3f5-1ae7085880f6"
                                         },
@@ -271,25 +268,14 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|createAlias": null,
                                                 "designer|displayName": "Lastname",
+                                                "id": "lastnamefield",
+                                                "itemId": "lastnamefield",
                                                 "label": "Lastname",
-                                                "labelWidth": "35%"
+                                                "labelWidth": 150
                                             },
                                             "designerId": "f89d3a13-4d25-4b23-ae0a-24bde30650f8"
-                                        },
-                                        {
-                                            "type": "Ext.field.Text",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|displayName": "Lastname",
-                                                "label": "Lastname",
-                                                "labelWidth": "35%"
-                                            },
-                                            "designerId": "7a67dbfb-db30-497c-8525-db13240db4c0"
                                         }
                                     ]
                                 }
@@ -304,7 +290,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "bottom": 0,
-                                "itemId": "mycontainer6",
+                                "designer|createAlias": null,
+                                "designer|displayName": "Billing",
+                                "id": "billingformcontainer",
+                                "itemId": "billingformcontainer",
                                 "layout": "vbox",
                                 "left": 0,
                                 "right": 0,
@@ -320,7 +309,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|createAlias": null,
+                                        "designer|displayName": "Billing Title Bar",
                                         "docked": "top",
+                                        "id": "billingtitlebar",
+                                        "itemId": "billingtitlebar",
                                         "title": "Billing"
                                     },
                                     "designerId": "f92f5a92-2485-4b46-bba2-efcc58bc51df"

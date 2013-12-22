@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.controller.LoginController', {
+Ext.define('app.controller.LoginController', {
     extend: 'Ext.app.Controller',
 
     config: {
@@ -88,7 +88,7 @@ Ext.define('MyApp.controller.LoginController', {
         debugger;
 
         var loginStatusStore =Ext.getStore("LoginStatusStore");
-        var loginStatusRecord = Ext.create("app.model.LoginStatus",
+        var loginStatusRecord = Ext.create("model.loginstatus",
                                            {
                                                success: loginResponse.success,
                                                loggedIn: loginResponse.loggedIn,

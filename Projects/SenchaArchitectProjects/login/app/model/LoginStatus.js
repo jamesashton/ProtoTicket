@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.LoginStatus', {
+Ext.define('app.model.LoginStatus', {
     extend: 'Ext.data.Model',
     alias: 'model.loginstatus',
 

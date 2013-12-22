@@ -11,39 +11,40 @@
            http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	xmlns:context="http://www.springframework.org/schema/context">
 	
-	<context:component-scan base-package="com.aka.prototicket" />
-	
+
+
 	<http pattern="/resources/**" security="none"/> 
-	<!--  http pattern="/resources/login/login.do"   security="none" /-->
+
 	<http use-expressions="true">
 	  
-	    <!--intercept-url pattern="/app/login.do" access="permitAll()" filters="none" /-->
+	   
 	    <intercept-url pattern="/**" access="isAuthenticated()" />
-        <form-login login-page="/resources/login/login.do" 
+        <form-login login-page="/resources/app/login.do" 
         			authentication-success-handler-ref="loginSuccessHandler" 
         			authentication-failure-handler-ref="loginFailureHandler" />
         <logout invalidate-session="true" logout-success-url="/" logout-url="/j_spring_security_logout"/>
         <!--  remember-me key="com.aka" / -->
-        <session-management session-fixation-protection="newSession" >
-            <concurrency-control max-sessions="1" error-if-maximum-exceeded="false"/>
+        <session-management  session-fixation-protection="newSession" >
+            <concurrency-control max-sessions="5" error-if-maximum-exceeded="false"/>
         </session-management>
 	 </http>
-	<!--  authentication-manager>
+	<authentication-manager>
 		 <authentication-provider>
 			 <user-service>
+			  	 <user name="admin" password="admin123" authorities="supervisor, teller, user" />
 				 <user name="rod" password="koala" authorities="supervisor, teller, user" />
 				 <user name="dianne" password="emu" authorities="teller, user" />
 				 <user name="scott" password="wombat" authorities="user" />
 				 <user name="peter" password="opal" authorities="user" />
 			 </user-service>
 		 </authentication-provider>
-	 </authentication-manager -->
+	 </authentication-manager>
  
-	<authentication-manager>  
+	<!--  authentication-manager erase-credentials="false" >
         <authentication-provider  user-service-ref="userDetailsService">
             <password-encoder hash="plaintext" ></password-encoder>
         </authentication-provider>  
-    </authentication-manager>
+    </authentication-manager-->
  
  	 
 	 <beans:bean id="loginSuccessHandler" class="com.aka.prototicket.controller.login.LoginSuccessHandler" />
