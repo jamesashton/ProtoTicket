@@ -21,10 +21,10 @@
         "cacheBust": false,
         "customPath": ""
     },
-    "xdsVersion": "3.0.0",
-    "xdsBuild": 1337,
+    "xdsVersion": "3.0.1",
+    "xdsBuild": 1343,
     "schemaVersion": 1,
-    "upgradeVersion": 300000000003,
+    "upgradeVersion": 300000000004,
     "framework": "touch23",
     "viewOrderMap": {
         "view": [

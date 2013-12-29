@@ -10,8 +10,16 @@
 
 	<context:component-scan base-package="com.aka.prototicket.db" />
 	
-	<jdbc:embedded-database id="dataSource" type="H2"/>
-	
+	<!-- jdbc:embedded-database id="dataSource" type="H2"/ -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/prototicket" />
+		<property name="username" value="prototicketuser" />
+		<property name="password" value="Password1" />
+	</bean>
+ 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>

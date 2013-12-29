@@ -9,8 +9,16 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-	<jdbc:embedded-database id="dataSource" type="H2"/>
-	
+	<!--  jdbc:embedded-database id="dataSource" type="H2"/ -->
+		<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/prototicket" />
+		<property name="username" value="prototicketuser" />
+		<property name="password" value="Password1" />
+	</bean>
+ 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>

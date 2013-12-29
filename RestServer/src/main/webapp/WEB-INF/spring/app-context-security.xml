@@ -28,7 +28,7 @@
             <concurrency-control max-sessions="5" error-if-maximum-exceeded="false"/>
         </session-management>
 	 </http>
-	<authentication-manager>
+	<!--  authentication-manager>
 		 <authentication-provider>
 			 <user-service>
 			  	 <user name="admin" password="admin123" authorities="supervisor, teller, user" />
@@ -38,13 +38,13 @@
 				 <user name="peter" password="opal" authorities="user" />
 			 </user-service>
 		 </authentication-provider>
-	 </authentication-manager>
+	 </authentication-manager -->
  
-	<!--  authentication-manager erase-credentials="false" >
+	<authentication-manager erase-credentials="false" >
         <authentication-provider  user-service-ref="userDetailsService">
             <password-encoder hash="plaintext" ></password-encoder>
         </authentication-provider>  
-    </authentication-manager-->
+    </authentication-manager>
  
  	 
 	 <beans:bean id="loginSuccessHandler" class="com.aka.prototicket.controller.login.LoginSuccessHandler" />
