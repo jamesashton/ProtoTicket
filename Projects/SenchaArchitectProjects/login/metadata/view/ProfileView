@@ -127,8 +127,23 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "bottom": 0
+                    },
                     "designerId": "202b050e-5f3c-40c7-8d38-b038702b69bd",
                     "cn": [
+                        {
+                            "type": "Ext.tab.Bar",
+                            "reference": {
+                                "name": "tabBar",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "top"
+                            },
+                            "designerId": "8c64658d-5973-46b8-8324-492bf021e5a6"
+                        },
                         {
                             "type": "Ext.Container",
                             "reference": {
@@ -145,8 +160,8 @@
                                 "id": "profileformcontainer",
                                 "itemId": "profileformcontainer",
                                 "layout": "vbox",
-                                "left": null,
-                                "right": null,
+                                "left": " 0",
+                                "right": 0,
                                 "top": 0,
                                 "width": null
                             },
@@ -178,7 +193,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "bottom": null,
-                                        "centered": true,
+                                        "centered": false,
                                         "designer|createAlias": null,
                                         "designer|displayName": "Credentials Field Set",
                                         "id": "credentialsfieldset",
@@ -233,7 +248,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "centered": true,
+                                        "centered": false,
                                         "designer|createAlias": null,
                                         "designer|displayName": "Identity Fieldset",
                                         "id": "identityfieldset",

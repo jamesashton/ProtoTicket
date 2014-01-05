@@ -24,6 +24,7 @@ Ext.define('app.view.ProfileView', {
         'Ext.SegmentedButton',
         'Ext.form.Panel',
         'Ext.tab.Panel',
+        'Ext.tab.Bar',
         'Ext.form.FieldSet',
         'Ext.field.Text'
     ],
@@ -64,12 +65,18 @@ Ext.define('app.view.ProfileView', {
                 items: [
                     {
                         xtype: 'tabpanel',
+                        bottom: 0,
+                        tabBar: {
+                            docked: 'top'
+                        },
                         items: [
                             {
                                 xtype: 'container',
                                 bottom: 0,
                                 id: 'profileformcontainer',
                                 itemId: 'profileformcontainer',
+                                left: ' 0',
+                                right: 0,
                                 top: 0,
                                 layout: {
                                     type: 'vbox',
@@ -86,7 +93,7 @@ Ext.define('app.view.ProfileView', {
                                     },
                                     {
                                         xtype: 'fieldset',
-                                        centered: true,
+                                        centered: false,
                                         id: 'credentialsfieldset',
                                         itemId: 'credentialsfieldset',
                                         maxWidth: 500,
@@ -110,7 +117,7 @@ Ext.define('app.view.ProfileView', {
                                     },
                                     {
                                         xtype: 'fieldset',
-                                        centered: true,
+                                        centered: false,
                                         id: 'identityfieldset',
                                         itemId: 'identityfieldset',
                                         maxWidth: 500,

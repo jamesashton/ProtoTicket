@@ -39,6 +39,7 @@ Ext.define('app.view.TabNavigationView', {
         items: [
             {
                 xtype: 'homeview',
+                itemId: 'HomeView',
                 title: 'Home',
                 iconCls: 'home'
             },

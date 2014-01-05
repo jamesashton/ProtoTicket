@@ -35,6 +35,7 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "home",
+                "itemId": "HomeView",
                 "modal": null,
                 "title": "Home"
             },
