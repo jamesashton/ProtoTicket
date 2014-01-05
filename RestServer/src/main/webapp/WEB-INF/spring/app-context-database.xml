@@ -13,9 +13,9 @@
 		<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
  
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/prototicket" />
-		<property name="username" value="prototicketuser" />
+		<property name="username" value="proto" />
 		<property name="password" value="Password1" />
 	</bean>
  

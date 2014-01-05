@@ -61,7 +61,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 		}
 		else
 		{
-			user.setPassword("*********");
 			UserDto userDto = userMapper.toDto(user);
 			
 			status = new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, userDto);
@@ -74,4 +73,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 		mapper.writeValue(out, status);
 	}
 
+	
+	
 }
