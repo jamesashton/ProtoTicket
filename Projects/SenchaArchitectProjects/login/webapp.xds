@@ -2,7 +2,7 @@
     "name": "webapp",
     "settings": {
         "cmd": {},
-        "exportPath": "/Users/jamesashton/Documents/development/GIT/Rainbird Projects/prototicket/RestServer/target/sencha-publish-path/",
+        "exportPath": "/Users/james/Development/Work/projects/prototicket/RestServer/src/main/webapp/resources/app",
         "urlPrefix": "http://localhost:8080/RestServer/resources/app/",
         "canvasControls": {
             "viewportSize": {
