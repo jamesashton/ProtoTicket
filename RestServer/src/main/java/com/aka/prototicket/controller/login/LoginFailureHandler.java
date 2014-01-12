@@ -21,6 +21,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler
 
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
+	@Override
 	public void onAuthenticationFailure(HttpServletRequest request,
 			HttpServletResponse response, AuthenticationException auth)
 			throws IOException, ServletException {

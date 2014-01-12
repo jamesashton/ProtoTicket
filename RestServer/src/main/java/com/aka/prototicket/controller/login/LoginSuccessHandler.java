@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.aka.prototicket.db.dao.UserDAO;
-import com.aka.prototicket.db.entity.Role;
 import com.aka.prototicket.db.entity.User;
 import com.aka.prototicket.model.*;
 import com.aka.prototicket.model.dto.UserDto;
@@ -37,6 +36,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
+	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request,
 			HttpServletResponse response, Authentication auth) throws IOException,
 			ServletException {
@@ -55,7 +55,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler
 			userDto.setLastname("developer");
 			userDto.setLogin("developer");
 			userDto.setPassword("developer");
-			Role r = new Role();
 
 			status=  new LoginStatus(true, auth.isAuthenticated(), auth.getName(), null, userDto);
 		}

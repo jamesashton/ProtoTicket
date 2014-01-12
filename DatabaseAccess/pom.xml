@@ -9,9 +9,9 @@
 		<relativePath>../Main/pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.aka</groupId>
+	
 	<artifactId>DatabaseAccess</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	
 	<packaging>jar</packaging>
 	<name>ProtoTicket Database Access</name>
 	<description>

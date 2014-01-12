@@ -1,6 +1,5 @@
 package com.aka.prototicket.model.mapping;
 
-import static org.junit.Assert.*;
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -8,9 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.aka.prototicket.db.entity.Role;
 import com.aka.prototicket.db.entity.User;
 import com.aka.prototicket.model.dto.UserDto;

@@ -2,7 +2,6 @@ package com.aka.prototicket.model;
 
 import java.io.Serializable;
 
-import com.aka.prototicket.db.entity.User;
 import com.aka.prototicket.model.dto.UserDto;
 
 public class LoginStatus implements Serializable {

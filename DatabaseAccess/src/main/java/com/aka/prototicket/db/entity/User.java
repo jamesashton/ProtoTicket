@@ -8,7 +8,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 
 @Entity
 @Table(name="User")

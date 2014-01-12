@@ -1,10 +1,7 @@
 package com.aka.prototicket.model.mapping;
 import org.dozer.DozerBeanMapper;
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.aka.prototicket.model.dto.*;
 import com.aka.prototicket.db.entity.*;
 

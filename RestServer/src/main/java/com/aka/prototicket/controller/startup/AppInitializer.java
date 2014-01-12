@@ -6,8 +6,6 @@ import javax.servlet.ServletException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-
 import com.aka.prototicket.controller.home.HomeController;
 
 public class AppInitializer implements WebApplicationInitializer
