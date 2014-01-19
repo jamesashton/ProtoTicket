@@ -1,5 +1,7 @@
 package com.aka.prototicket.service.prediction;
 
+import java.io.IOException;
+
 import io.prediction.Client;
 import io.prediction.User;
 
@@ -8,7 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class PredictionHelper
 {
-
+	private static final String API_URL = "http://192.168.0.2:8000";
+	
 	Client client;
 
 	public PredictionHelper()
@@ -19,11 +22,14 @@ public class PredictionHelper
 	{
 
 		this.client = new Client(appKey);
+		setApiUrl(API_URL);
 	}
 
 	public void setApiUrl(String apiUrl)
 	{
+		
 		client.setApiUrl(apiUrl);
+		
 	}
 
 	public void close()
@@ -99,6 +105,17 @@ public class PredictionHelper
 		try
 		{
 			user = client.getUser(userId);
+		}
+		catch(IOException ie)
+		{
+			if(ie.getMessage().equalsIgnoreCase("{\"message\":\"Cannot find user.\"}"))
+			{
+				user = null;
+			}
+			else
+			{
+				throw new RuntimeException(ie);
+			}
 		}
 		catch(Exception e)
 		{
