@@ -3,6 +3,7 @@ package com.aka.prototicket.service.prediction;
 import java.io.IOException;
 
 import io.prediction.Client;
+import io.prediction.Item;
 import io.prediction.User;
 
 import org.springframework.stereotype.Component;
@@ -20,7 +21,10 @@ public class PredictionHelper
 
 	public void setAppKey(String appKey)
 	{
-
+		if(client != null)
+		{
+			client.close();
+		}
 		this.client = new Client(appKey);
 		setApiUrl(API_URL);
 	}
@@ -99,6 +103,19 @@ public class PredictionHelper
 		}
 	}
 
+	public Item getItem(String itemId)
+	{	
+		Item item;
+		try
+		{
+			item = client.getItem(itemId);
+		}
+		catch(Exception e)
+		{
+			throw new RuntimeException(e);
+		}
+		return item;
+	}
 	public User getUser(String userId)
 	{
 		User user;

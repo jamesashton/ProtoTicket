@@ -1,5 +1,6 @@
 package com.aka.prototicket.service.prediction;
 
+import io.prediction.Item;
 import io.prediction.User;
 import junit.framework.Assert;
 
@@ -18,17 +19,10 @@ public class PredictionHelperTest
 	@Autowired
 	PredictionHelper predictionHelper;
 	
-	@Before
-	public void setupPredictionHelper()
-	{
-		predictionHelper.setAppKey("7AenrKRwa475GhjqFNnu7MHQLayOgSxBW5uW4dSYeE8eJNBVCS53ZpnofGGPqaG2");
-		
-	}
-	
-	
 	@Test
 	public void testGetStatus()
 	{
+		predictionHelper.setAppKey("7AenrKRwa475GhjqFNnu7MHQLayOgSxBW5uW4dSYeE8eJNBVCS53ZpnofGGPqaG2");
 		Assert.assertEquals("PredictionIO Output API is online.", predictionHelper.getStatus());
 	}
 	
@@ -38,14 +32,31 @@ public class PredictionHelperTest
 		predictionHelper.addUser("testuser");
 		User user = predictionHelper.getUser("testuser");
 		Assert.assertEquals("testuser", user.getUid());
-		
-		
+		predictionHelper.deleteUser("testuser");
 	}
 	@Test
 	public void testDeleteUser()
 	{
+		predictionHelper.addUser("testuser");
 		predictionHelper.deleteUser("testuser");
 		User user = predictionHelper.getUser("testuser");
 		Assert.assertNull(user);
+	}
+	@Test
+	public void testCreateItem()
+	{
+		predictionHelper.addUser("testuser");
+		predictionHelper.addItem("item1",new String[]{"1"});
+		Item item = predictionHelper.getItem("item1");
+		Assert.assertEquals("item1",item.getIid());
+		predictionHelper.deleteItem("item1");
+	}
+	@Test
+	public void testDeleteItem()
+	{
+		predictionHelper.addItem("item1", new String[]{"1"});
+		predictionHelper.deleteItem("item1");
+		Item item = predictionHelper.getItem("item1");
+		Assert.assertNull(item);
 	}
 }
