@@ -1,10 +1,13 @@
 package com.aka.prototicket.service.prediction;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 import io.prediction.Client;
 import io.prediction.Item;
+import io.prediction.UnidentifiedUserException;
 import io.prediction.User;
+import io.prediction.UserActionItemRequestBuilder;
 
 import org.springframework.stereotype.Component;
 
@@ -139,5 +142,41 @@ public class PredictionHelper
 			throw new RuntimeException(e);
 		}
 		return user;
+	}
+	public void identify(String userId)
+	{
+		client.identify(userId);
+	}
+	public void recordActionOnItem(String userId, String itemId)
+	{
+		try
+		{
+			identify(userId);
+			UserActionItemRequestBuilder builder = client.getUserActionItemRequestBuilder(UserActionItemRequestBuilder.VIEW, itemId);
+			client.userActionItem(builder);
+			
+		}
+		catch(UnidentifiedUserException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(ExecutionException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(InterruptedException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(IOException e)
+		{
+			throw new RuntimeException(e);
+		}
+	}
+
+	public void deleteAction()
+	{
+		
+		
 	}
 }

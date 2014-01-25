@@ -1,5 +1,8 @@
 package com.aka.prototicket.service.prediction;
 
+import java.io.IOException;
+import java.util.Random;
+
 import io.prediction.Item;
 import io.prediction.User;
 import junit.framework.Assert;
@@ -46,7 +49,7 @@ public class PredictionHelperTest
 	public void testCreateItem()
 	{
 		predictionHelper.addUser("testuser");
-		predictionHelper.addItem("item1",new String[]{"1"});
+		predictionHelper.addItem("item1",new String[]{"itemrec"});
 		Item item = predictionHelper.getItem("item1");
 		Assert.assertEquals("item1",item.getIid());
 		predictionHelper.deleteItem("item1");
@@ -54,9 +57,62 @@ public class PredictionHelperTest
 	@Test
 	public void testDeleteItem()
 	{
-		predictionHelper.addItem("item1", new String[]{"1"});
+		Item item = null;
+		String msg = "";
+		predictionHelper.addItem("item1", new String[]{"itemrec"});
 		predictionHelper.deleteItem("item1");
-		Item item = predictionHelper.getItem("item1");
-		Assert.assertNull(item);
+		try
+		{
+			item = predictionHelper.getItem("item1");
+		}
+		catch(RuntimeException e)
+		{
+			msg = e.getMessage();
+		}
+		finally
+		{
+			Assert.assertNull(item);
+			Assert.assertTrue( msg.equals("java.io.IOException: {\"message\":\"Cannot find item.\"}"));
+		}
+	}
+	@Test
+	public void testActionOnItem()
+	{
+		int numUsers = 10;
+		int numItems = 50;
+		int numItemsPerUser = 10;
+		
+		for(int i=0;i<numUsers;i++) { predictionHelper.addUser("user"+i); }
+		for(int i=0;i<numItems;i++) { predictionHelper.addItem("item"+i,new String[]{"itemrec"}); }
+		
+		Random rnd = new Random();
+		
+		for(int i=0;i<numUsers;i++) 
+		{
+			predictionHelper.identify("user" + i);
+			for(int j=0;j<numItemsPerUser;j++) 
+			{
+				predictionHelper.recordActionOnItem("user"+i, "item" +  rnd.nextInt(numItems) );
+			}
+		}
+		
+		//for(int i=0;i<numUsers;i++) { predictionHelper.deleteUser("user"+i); }
+		//for(int i=0;i<numItems;i++) { predictionHelper.deleteItem("item"+i); }
+
+	}
+	
+	
+//	@Test
+	public void clearUsers()
+	{
+		int numUsers = 10;
+		int numItems = 50;
+		int numItemsPerUser = 10;
+
+	
+		for(int i=0;i<numUsers;i++) { predictionHelper.deleteUser("user"+i); }
+		for(int i=0;i<numItems;i++) { predictionHelper.deleteItem("item"+i); }
+
 	}
 }
+
