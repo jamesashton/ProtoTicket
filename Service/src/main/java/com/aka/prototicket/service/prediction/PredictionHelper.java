@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 
 import io.prediction.Client;
 import io.prediction.Item;
+import io.prediction.ItemRecGetTopNRequestBuilder;
 import io.prediction.UnidentifiedUserException;
 import io.prediction.User;
 import io.prediction.UserActionItemRequestBuilder;
@@ -173,10 +174,37 @@ public class PredictionHelper
 			throw new RuntimeException(e);
 		}
 	}
-
 	public void deleteAction()
 	{
-		
-		
+		// TODO: Delete Action
 	}
+	public String[] getPrediction(String userId)
+	{
+		String[] results = null;
+		try
+		{
+			identify(userId);  
+			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder("TestItemRecommendationEngine", 5);
+			results = client.getItemRecTopN(builder);
+			
+		}
+		catch(UnidentifiedUserException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(ExecutionException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(InterruptedException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(IOException e)
+		{
+			throw new RuntimeException(e);
+		}
+		return results;
+	}
+	
 }
