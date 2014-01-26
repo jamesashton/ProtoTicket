@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:ServiceTest-context.xml"})
-public class PredictionHelperRetrieveTest
+public class PredictionHelperRetrieveTest extends PredictionHelperTestBase
 {
 	@Autowired
 	PredictionHelper predictionHelper;
@@ -27,20 +27,32 @@ public class PredictionHelperRetrieveTest
 	
 	
 	@Test
-	public void testRetrieve()
+	public void testGetRecommentations()
 	{
-		int numUsers = 10;
-		
-		for(int i=0;i<numUsers;i++) 
+
+		for(int i=0;i<NUM_USERS;i++) 
 		{
 			String userId = "user" + i;
 			
-			String[] results = predictionHelper.getPrediction(userId);
-			System.out.print("Top 5 for user " + userId);
+			String[] results = predictionHelper.getRecommendations(userId,5);
+			System.out.print("Top 5 recommendations for user " + userId);
 			System.out.println(":" + StringUtils.join(results, ","));
 			
 		}
 	}
-
+	
+	@Test
+	public void testGetSimilar()
+	{
+		for(int i=0;i<NUM_ITEMS;i++) 
+		{
+			String itemId = "item" + i;
+			
+			String[] results = predictionHelper.getSimilar(itemId, 5);
+			System.out.print("Top 5 similar items to " + itemId);
+			String items = StringUtils.join(results, ",");
+			System.out.println(": " + ((items!=null)?items:"No similar items found."));
+		}
+	}
 }
 

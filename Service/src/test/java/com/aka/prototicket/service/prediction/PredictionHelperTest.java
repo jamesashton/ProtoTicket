@@ -1,34 +1,31 @@
 package com.aka.prototicket.service.prediction;
 
-import java.io.IOException;
 import java.util.Random;
 
 import io.prediction.Item;
 import io.prediction.User;
 import junit.framework.Assert;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:ServiceTest-context.xml"})
-public class PredictionHelperTest
+@ContextConfiguration(locations = { "classpath:ServiceTest-context.xml" })
+public class PredictionHelperTest extends PredictionHelperTestBase
 {
 	@Autowired
 	PredictionHelper predictionHelper;
-	
+
 	@Test
 	public void testGetStatus()
 	{
 		predictionHelper.setAppKey("7AenrKRwa475GhjqFNnu7MHQLayOgSxBW5uW4dSYeE8eJNBVCS53ZpnofGGPqaG2");
 		Assert.assertEquals("PredictionIO Output API is online.", predictionHelper.getStatus());
 	}
-	
+
 	@Test
 	public void testCreateUser()
 	{
@@ -37,6 +34,7 @@ public class PredictionHelperTest
 		Assert.assertEquals("testuser", user.getUid());
 		predictionHelper.deleteUser("testuser");
 	}
+
 	@Test
 	public void testDeleteUser()
 	{
@@ -45,21 +43,23 @@ public class PredictionHelperTest
 		User user = predictionHelper.getUser("testuser");
 		Assert.assertNull(user);
 	}
+
 	@Test
 	public void testCreateItem()
 	{
 		predictionHelper.addUser("testuser");
-		predictionHelper.addItem("item1",new String[]{"itemrec"});
+		predictionHelper.addItem("item1", new String[] { "itemrec" });
 		Item item = predictionHelper.getItem("item1");
-		Assert.assertEquals("item1",item.getIid());
+		Assert.assertEquals("item1", item.getIid());
 		predictionHelper.deleteItem("item1");
 	}
+
 	@Test
 	public void testDeleteItem()
 	{
 		Item item = null;
 		String msg = "";
-		predictionHelper.addItem("item1", new String[]{"itemrec"});
+		predictionHelper.addItem("item1", new String[] { "itemrec" });
 		predictionHelper.deleteItem("item1");
 		try
 		{
@@ -72,47 +72,49 @@ public class PredictionHelperTest
 		finally
 		{
 			Assert.assertNull(item);
-			Assert.assertTrue( msg.equals("java.io.IOException: {\"message\":\"Cannot find item.\"}"));
+			Assert.assertTrue(msg.equals("java.io.IOException: {\"message\":\"Cannot find item.\"}"));
 		}
 	}
+
 	@Test
 	public void testActionOnItem()
 	{
-		int numUsers = 10;
-		int numItems = 50;
-		int numItemsPerUser = 10;
-		
-		for(int i=0;i<numUsers;i++) { predictionHelper.addUser("user"+i); }
-		for(int i=0;i<numItems;i++) { predictionHelper.addItem("item"+i,new String[]{"itemrec"}); }
-		
+
+		for (int i = 0; i < NUM_USERS; i++)
+		{
+			predictionHelper.addUser("user" + i);
+		}
+		for (int i = 0; i < NUM_ITEMS; i++)
+		{
+			predictionHelper.addItem("item" + i, new String[] { "itemrec" });
+		}
+
 		Random rnd = new Random();
-		
-		for(int i=0;i<numUsers;i++) 
+
+		for (int i = 0; i < NUM_USERS; i++)
 		{
 			predictionHelper.identify("user" + i);
-			for(int j=0;j<numItemsPerUser;j++) 
+			for (int j = 0; j < NUM_ITEMS_PER_USER; j++)
 			{
-				predictionHelper.recordActionOnItem("user"+i, "item" +  rnd.nextInt(numItems) );
+				predictionHelper.recordActionOnItem("user" + i,"item" + rnd.nextInt(NUM_ITEMS));
 			}
 		}
-		
-		//for(int i=0;i<numUsers;i++) { predictionHelper.deleteUser("user"+i); }
-		//for(int i=0;i<numItems;i++) { predictionHelper.deleteItem("item"+i); }
+
 
 	}
-	
-	
-//	@Test
+
+	// @Test
 	public void clearUsers()
 	{
-		int numUsers = 10;
-		int numItems = 50;
-		int numItemsPerUser = 10;
 
-	
-		for(int i=0;i<numUsers;i++) { predictionHelper.deleteUser("user"+i); }
-		for(int i=0;i<numItems;i++) { predictionHelper.deleteItem("item"+i); }
+		for (int i = 0; i < NUM_USERS; i++)
+		{
+			predictionHelper.deleteUser("user" + i);
+		}
+		for (int i = 0; i < NUM_ITEMS; i++)
+		{
+			predictionHelper.deleteItem("item" + i);
+		}
 
 	}
 }
-

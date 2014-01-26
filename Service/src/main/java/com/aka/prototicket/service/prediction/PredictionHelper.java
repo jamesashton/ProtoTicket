@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutionException;
 import io.prediction.Client;
 import io.prediction.Item;
 import io.prediction.ItemRecGetTopNRequestBuilder;
+import io.prediction.ItemSimGetTopNRequestBuilder;
 import io.prediction.UnidentifiedUserException;
 import io.prediction.User;
 import io.prediction.UserActionItemRequestBuilder;
@@ -178,13 +179,13 @@ public class PredictionHelper
 	{
 		// TODO: Delete Action
 	}
-	public String[] getPrediction(String userId)
+	public String[] getRecommendations(String userId, int count)
 	{
-		String[] results = null;
+		String[] results = new String[]{};
 		try
 		{
 			identify(userId);  
-			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder("TestItemRecommendationEngine", 5);
+			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder("TestItemRecommendationEngine", count);
 			results = client.getItemRecTopN(builder);
 			
 		}
@@ -202,9 +203,40 @@ public class PredictionHelper
 		}
 		catch(IOException e)
 		{
-			throw new RuntimeException(e);
+			if(e.getMessage().equalsIgnoreCase("java.io.IOException: {\"message\":\"Cannot find items for user.\"}")){}
+			else
+			{	
+				throw new RuntimeException(e);
+			}
 		}
 		return results;
 	}
-	
+	public String[] getSimilar(String itemId, int count)
+	{
+		String[] result = null;
+		try
+		{
+			ItemSimGetTopNRequestBuilder builder = client.getItemSimGetTopNRequestBuilder("TestItemSimilarityEngine", itemId, count);	
+			result = client.getItemSimTopN(builder);
+		}
+		catch(ExecutionException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(InterruptedException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(IOException e)
+		{
+			if(e.getMessage().indexOf("Cannot find similar items for item.") > -1)
+			{}
+			else
+			{	
+				throw new RuntimeException(e);
+			}
+		}
+		
+		return result; 
+	}
 }
