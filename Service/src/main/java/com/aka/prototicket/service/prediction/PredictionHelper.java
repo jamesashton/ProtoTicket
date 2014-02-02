@@ -1,6 +1,7 @@
 package com.aka.prototicket.service.prediction;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 import io.prediction.Client;
@@ -11,14 +12,19 @@ import io.prediction.UnidentifiedUserException;
 import io.prediction.User;
 import io.prediction.UserActionItemRequestBuilder;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PredictionHelper
 {
-	private static final String API_URL = "http://192.168.0.2:8000";
+	@Value("${prediction.apiUrl}")
+	private String apiUrl;
 	
-	Client client;
+	@Value("${prediction.appKey}")
+	private String appKey;
+	
+	private Client client;
 
 	public PredictionHelper()
 	{
@@ -29,23 +35,43 @@ public class PredictionHelper
 		if(client != null)
 		{
 			client.close();
+			client = null;
 		}
-		this.client = new Client(appKey);
-		setApiUrl(API_URL);
+		this.appKey = appKey;
 	}
-
-	public void setApiUrl(String apiUrl)
+	public String getAppKey()
 	{
-		
-		client.setApiUrl(apiUrl);
-		
+		return appKey;
 	}
-
+	
+	public void setApiUrl(String apiUrl)
+	{		
+		if(client != null)
+		{
+			client.close();
+			client = null;
+		}
+		this.apiUrl = apiUrl;
+	}
+	public String getApiUrl()
+	{
+		return apiUrl;
+	}
+	
 	public void close()
 	{
 		client.close();
 	}
 
+	public void initialise()
+	{
+		if(client!=null)
+		{
+			client.close();
+		}
+		client = new Client(appKey, apiUrl);
+	}
+	
 	public String getStatus()
 	{
 		String rtn;
