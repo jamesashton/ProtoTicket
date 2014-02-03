@@ -1,6 +1,7 @@
 package com.aka.prototicket.service.prediction;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.concurrent.ExecutionException;
 
 import io.prediction.Client;
@@ -76,7 +77,8 @@ public class PredictionHelper
 	{
 		try
 		{
-			client.createItem(itemId, itemTypes);
+			String enc = URLEncoder.encode(itemId, "utf-8");
+			client.createItem(enc, itemTypes);
 		}
 		catch(Exception e)
 		{
@@ -100,7 +102,8 @@ public class PredictionHelper
 	{
 		try
 		{
-			client.deleteItem(itemId);
+			String enc = URLEncoder.encode(itemId, "utf-8");
+			client.deleteItem(enc);
 		}
 		catch(Exception e)
 		{
@@ -113,7 +116,8 @@ public class PredictionHelper
 		Item item;
 		try
 		{
-			item = client.getItem(itemId);
+			String enc = URLEncoder.encode(itemId, "utf-8");
+			item = client.getItem(enc);
 		}
 		catch(Exception e)
 		{
@@ -153,8 +157,9 @@ public class PredictionHelper
 	{
 		try
 		{
+			String enc = URLEncoder.encode(itemId, "utf-8");
 			identify(userId);
-			UserActionItemRequestBuilder builder = client.getUserActionItemRequestBuilder(UserActionItemRequestBuilder.VIEW, itemId);
+			UserActionItemRequestBuilder builder = client.getUserActionItemRequestBuilder(UserActionItemRequestBuilder.VIEW, enc);
 			client.userActionItem(builder);
 			
 		}
@@ -216,7 +221,8 @@ public class PredictionHelper
 		String[] result = null;
 		try
 		{
-			ItemSimGetTopNRequestBuilder builder = client.getItemSimGetTopNRequestBuilder("TestItemSimilarityEngine", itemId, count);	
+			String enc = URLEncoder.encode(itemId, "utf-8");
+			ItemSimGetTopNRequestBuilder builder = client.getItemSimGetTopNRequestBuilder("TestItemSimilarityEngine", enc, count);	
 			result = client.getItemSimTopN(builder);
 		}
 		catch(ExecutionException e)
