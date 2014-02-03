@@ -22,8 +22,9 @@ public class PredictionHelperTest extends PredictionHelperTestBase
 	@Test
 	public void testGetStatus()
 	{
-		predictionHelper.setAppKey("7AenrKRwa475GhjqFNnu7MHQLayOgSxBW5uW4dSYeE8eJNBVCS53ZpnofGGPqaG2");
+		predictionHelper.initialise();
 		Assert.assertEquals("PredictionIO Output API is online.", predictionHelper.getStatus());
+
 	}
 
 	@Test

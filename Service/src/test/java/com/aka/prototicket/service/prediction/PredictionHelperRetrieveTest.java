@@ -5,6 +5,8 @@ import java.util.Random;
 import junit.framework.Assert;
 
 import org.apache.commons.lang.StringUtils;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +20,15 @@ public class PredictionHelperRetrieveTest extends PredictionHelperTestBase
 	@Autowired
 	PredictionHelper predictionHelper;
 	
+	@Before
+	public void init()
+	{
+		predictionHelper.initialise();
+	}
+	
 	@Test
 	public void testGetStatus()
 	{
-		predictionHelper.setAppKey("7AenrKRwa475GhjqFNnu7MHQLayOgSxBW5uW4dSYeE8eJNBVCS53ZpnofGGPqaG2");
 		Assert.assertEquals("PredictionIO Output API is online.", predictionHelper.getStatus());
 	}
 	
@@ -41,7 +48,7 @@ public class PredictionHelperRetrieveTest extends PredictionHelperTestBase
 		}
 	}
 	
-	@Test
+	//@Test
 	public void testGetSimilar()
 	{
 		for(int i=0;i<NUM_ITEMS;i++) 
