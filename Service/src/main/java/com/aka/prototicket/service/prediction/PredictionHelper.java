@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PredictionHelper
 {
-	private static final String API_URL = "http://192.168.0.2:8000";
+	private static final String API_URL = "http://localhost:8000";
 	
 	Client client;
 
