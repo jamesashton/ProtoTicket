@@ -153,7 +153,7 @@ public class PredictionHelper
 	{
 		client.identify(userId);
 	}
-	public void recordActionOnItem(String userId, String itemId)
+	public void recordViewActionOnItem(String userId, String itemId)
 	{
 		try
 		{
@@ -179,6 +179,61 @@ public class PredictionHelper
 		{
 			throw new RuntimeException(e);
 		}
+	}
+	public void recordBuyActionOnItem(String userId, String itemId)
+	{
+		try
+		{
+			String enc = URLEncoder.encode(itemId, "utf-8");
+			identify(userId);
+			UserActionItemRequestBuilder builder = client.getUserActionItemRequestBuilder(UserActionItemRequestBuilder.CONVERSION, enc);
+			client.userActionItem(builder);
+		}
+		catch(UnidentifiedUserException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(ExecutionException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(InterruptedException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(IOException e)
+		{
+			throw new RuntimeException(e);
+		}
+		
+	}
+	public void recordRateActionOnItem(String userId, String itemId, int rating)
+	{
+		try
+		{
+			String enc = URLEncoder.encode(itemId, "utf-8");
+			identify(userId);
+			UserActionItemRequestBuilder builder = client.getUserActionItemRequestBuilder(UserActionItemRequestBuilder.RATE, enc);
+			builder.rate(rating);
+			client.userActionItem(builder);
+		}
+		catch(UnidentifiedUserException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(ExecutionException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(InterruptedException e)
+		{
+			throw new RuntimeException(e);
+		}
+		catch(IOException e)
+		{
+			throw new RuntimeException(e);
+		}
+		
 	}
 	public void deleteAction()
 	{
@@ -245,4 +300,6 @@ public class PredictionHelper
 		
 		return result; 
 	}
+
+
 }

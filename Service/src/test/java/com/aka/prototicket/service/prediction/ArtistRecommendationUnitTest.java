@@ -5,6 +5,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import io.prediction.Item;
 import io.prediction.User;
@@ -22,6 +23,7 @@ public class ArtistRecommendationUnitTest extends PredictionHelperTestBase
 {
 	@Autowired
 	PredictionHelper predictionHelper;
+	
 	String[] genres = new String[] {"blues","rock","country","pop"};
 	Map<String,Item[]> items = new HashMap<String,Item[]>();
 	int NUMBER_USERS_PER_GENRE = 2;
@@ -93,6 +95,70 @@ public class ArtistRecommendationUnitTest extends PredictionHelperTestBase
 		
 		
 	}
+	public void testViewAction()
+	{
+		for(int i=0;i<genres.length;i++)
+		{
+			for(int j=0;j<NUMBER_USERS_PER_GENRE;j++)
+			{
+				String username = genres[i] + "user" + j;
+				Item[] itemIds = items.get(genres[i]);
+				String itemId =  itemIds[new Random().nextInt(itemIds.length-1)].getIid();
+				predictionHelper.recordViewActionOnItem(username,itemId);
+			}
+		}
+	}
+	public void testBuyAction()
+	{
+		for(int i=0;i<genres.length;i++)
+		{
+			for(int j=0;j<NUMBER_USERS_PER_GENRE;j++)
+			{
+				String username = genres[i] + "user" + j;
+				Item[] itemIds = items.get(genres[i]);
+				String itemId =  itemIds[new Random().nextInt(itemIds.length-1)].getIid();
+				predictionHelper.recordBuyActionOnItem(username,itemId);
+				System.out.println("User "+username+" has purchased a ticket to "+itemId );
+			}	
+		}
+	}
+	public void testRateAction()
+	{
+		for(int i=0;i<genres.length;i++)
+		{
+			for(int j=0;j<NUMBER_USERS_PER_GENRE;j++)
+			{
+				String username = genres[i] + "user" + j;
+				Item[] itemIds = items.get(genres[i]);
+				String itemId =  itemIds[new Random().nextInt(itemIds.length-1)].getIid();
+				predictionHelper.recordRateActionOnItem(username,itemId, new Random().nextInt(4) + 1);
+				System.out.println("User "+username+" has purchased a ticket to "+itemId );
+			}	
+		}
+	}
+	public void testPauseForComputation() throws InterruptedException
+	{
+		Thread.sleep(30000);
+	}
+	public void testGetRecommendations() 
+	{
+		for(int i=0;i<genres.length;i++)
+		{
+			for(int j=0;j<NUMBER_USERS_PER_GENRE;j++)
+			{
+				String username = genres[i] + "user" + j;
+				
+				String[] recommendations = predictionHelper.getRecommendations(username, 2);
+				
+				for(int k=0;k<recommendations.length;k++)
+				{
+					System.out.println("User " + username + " is recommended going to see " + recommendations[k]);
+				}
+				
+			}
+		}
+	}
+	
 	private void addArtists( String genre,  String[] artistNames)
 	{
 			items.put(genre, createItems(artistNames, "artist"));

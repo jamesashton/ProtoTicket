@@ -97,7 +97,7 @@ public class PredictionHelperTest extends PredictionHelperTestBase
 			predictionHelper.identify("user" + i);
 			for (int j = 0; j < NUM_ITEMS_PER_USER; j++)
 			{
-				predictionHelper.recordActionOnItem("user" + i,"item" + rnd.nextInt(NUM_ITEMS));
+				predictionHelper.recordViewActionOnItem("user" + i,"item" + rnd.nextInt(NUM_ITEMS));
 			}
 		}
 
