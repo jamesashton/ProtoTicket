@@ -1,4 +1,4 @@
-package com.aka.prototicket.service.prediction;
+package com.aka.prototicket.service.prediction.tests;
 
 import java.util.Random;
 
@@ -13,16 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:ServiceTest-context.xml"})
+import com.aka.prototicket.service.prediction.testbase.PredictionHelperTestBase;
+
+
 public class PredictionHelperRetrieveTest extends PredictionHelperTestBase
 {
-	@Autowired
-	PredictionHelper predictionHelper;
-	
 	@Before
-	public void init()
+	public void setup()
 	{
+		predictionHelper.setAppKey(PREDICTION_APIKEY);
 		predictionHelper.initialise();
 	}
 	
@@ -31,6 +30,7 @@ public class PredictionHelperRetrieveTest extends PredictionHelperTestBase
 	{
 		Assert.assertEquals("PredictionIO Output API is online.", predictionHelper.getStatus());
 	}
+	
 	
 	
 	@Test

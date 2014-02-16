@@ -1,4 +1,4 @@
-package com.aka.prototicket.service.prediction;
+package com.aka.prototicket.service.prediction.tests;
 
 import io.prediction.Item;
 import io.prediction.User;
@@ -10,17 +10,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:ServiceTest-context.xml" })
+import com.aka.prototicket.service.prediction.testbase.PredictionHelperTestBase;
+
 public class ArtistRecommendationCommissionTest extends PredictionHelperTestBase
 {
-	@Autowired
-	PredictionHelper predictionHelper;
 
+	@Test 
+	public void setup()
+	{
+		predictionHelper.setAppKey(ARTIST_RECOMMENDATION_APIKEY);
+		predictionHelper.initialise();
+	}
+	
 	@Test
 	public void testGetStatus()
 	{
-		predictionHelper.setAppKey("U8pr8tR2jBRC6ZshJl1H9iSNu8oeQPjNSNVMqRcB82ONq3lotRO07EjCEocXQuTi");
 		Assert.assertEquals("PredictionIO Output API is online.", predictionHelper.getStatus());
 	}
 	

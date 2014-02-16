@@ -18,6 +18,8 @@ import org.springframework.stereotype.Component;
 public class PredictionHelper
 {
 	private static final String API_URL = "http://localhost:8000";
+	private String appKey = "Not Set";
+	private String apiUrl;
 	
 	Client client;
 
@@ -25,20 +27,24 @@ public class PredictionHelper
 	{
 	}
 
-	public void setAppKey(String appKey)
+	public void initialise()
 	{
 		if(client != null)
 		{
 			client.close();
 		}
-		this.client = new Client(appKey);
-		setApiUrl(API_URL);
+		client = new Client(appKey);
+	}
+	
+	public void setAppKey(String appKey)
+	{
+		this.appKey = appKey;
 	}
 
 	public void setApiUrl(String apiUrl)
 	{
 		
-		client.setApiUrl(apiUrl);
+		this.apiUrl = apiUrl;
 		
 	}
 
@@ -245,7 +251,7 @@ public class PredictionHelper
 		try
 		{
 			identify(userId);  
-			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder("TestItemRecommendationEngine", count);
+			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder("engine1", count);
 			results = client.getItemRecTopN(builder);
 			
 		}
