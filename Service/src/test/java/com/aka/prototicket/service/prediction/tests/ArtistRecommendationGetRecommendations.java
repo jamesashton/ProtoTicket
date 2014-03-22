@@ -36,7 +36,7 @@ public class ArtistRecommendationGetRecommendations extends ArtistRecommendation
 				try
 				{
 				
-					String[] recommendations = predictionHelper.getRecommendations(username, 2);
+					String[] recommendations = predictionHelper.getRecommendations("engine2",username, 2);
 				
 					for(int k=0;k<recommendations.length;k++)
 					{

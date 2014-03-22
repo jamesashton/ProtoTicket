@@ -41,7 +41,7 @@ public class PredictionHelperRetrieveTest extends PredictionHelperTestBase
 		{
 			String userId = "user" + i;
 			
-			String[] results = predictionHelper.getRecommendations(userId,5);
+			String[] results = predictionHelper.getRecommendations("engine1",userId,5);
 			System.out.print("Top 5 recommendations for user " + userId);
 			System.out.println(":" + StringUtils.join(results, ","));
 			

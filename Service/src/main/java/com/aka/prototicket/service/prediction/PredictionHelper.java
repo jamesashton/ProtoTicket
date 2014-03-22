@@ -245,13 +245,13 @@ public class PredictionHelper
 	{
 		// TODO: Delete Action
 	}
-	public String[] getRecommendations(String userId, int count)
+	public String[] getRecommendations(String engine, String userId, int count)
 	{
 		String[] results = new String[]{};
 		try
 		{
 			identify(userId);  
-			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder("engine1", count);
+			ItemRecGetTopNRequestBuilder builder = client.getItemRecGetTopNRequestBuilder(engine, count);
 			results = client.getItemRecTopN(builder);
 			
 		}
